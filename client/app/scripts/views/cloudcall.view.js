@@ -18,7 +18,7 @@ App.View.CloudcallView = App.View.BaseView.extend({
 
     $fh.cms.updateAll(function () {
       console.log('Successful mCMS refresh');
-      self.gotData({text:'Successful mCMS refresh'})
+      self.gotData({text:'Successful mCMS refresh'});
     }, function(err) {
       console.log('Failed mCMS refresh');
       self.dataError('Failed mCMS refresh', err);

@@ -15,9 +15,9 @@ describe('render main page', function(){
     expect(header.text()).toMatch(/welcome to feedhenry/i);
   });
   
-  it('should contains 6 page links', function(){
-    //verify there are 6 options displayed
+  it('should contains 1 page link', function(){
+    //verify there is 1 option displayed
     var pageLinks = mainPageDiv.find('.row .container');
-    expect(pageLinks.length).toEqual(6);
+    expect(pageLinks.length).toEqual(1);
   });
 });
