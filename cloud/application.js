@@ -1,7 +1,7 @@
 //the main file for the cloud app
-var webapp = require('fh-webapp');
+var webapp = require('fh-webapp-test');
 var express = require('express');
-$fh = require('fh-api');
+$fh = require('fh-api-test');
 var mainjs = require('main.js');
 
 var app = express();

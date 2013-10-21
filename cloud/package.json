@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "dependencies": {
     "fh-webapp-test" : "*",
+    "fh-api-test" : "*",
     "express" : "3.3.4",
     "limiter" : "*",
     "request" : "*",
