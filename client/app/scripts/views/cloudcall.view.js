@@ -11,6 +11,7 @@ App.View.CloudcallView = App.View.BaseView.extend({
 
   initialize: function(){
     _.bindAll(this, 'gotData', 'dataError');
+    this.on('change:cmsFieldData', this.render);
   },
 
   cloudCall: function(){
@@ -20,6 +21,7 @@ App.View.CloudcallView = App.View.BaseView.extend({
       console.log('Successful mCMS refresh');
       $fh.cms.getField({path:"anewsection28.section1_field33"}, function(value) {
         self.gotData({text:value});
+        self.model.set("cmsFieldData", value);
         //self.model.cmsFieldData = value;
         console.log('Retrieved field value: ', value);
       }, function(err) {
