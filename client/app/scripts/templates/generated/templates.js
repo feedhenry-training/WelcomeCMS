@@ -20,10 +20,6 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (stack1 = helpers.buttonText) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.buttonText; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</a></p>\n    <p><a class=\"btn btn-primary btn-lg cms-button\"><i class=\"icon-external-link-sign\"></i> ";
-  if (stack1 = helpers.buttonText) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.buttonText; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
     + "</a></p>\n    <p class=\"response_content alert\"></p>\n    <p class=\"extra_response hidden\">\n      ";
   if (stack1 = helpers.extraRes) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.extraRes; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
