@@ -11,7 +11,7 @@ App.View.CloudcallView = App.View.BaseView.extend({
 
   initialize: function(){
     _.bindAll(this, 'gotData', 'dataError');
-    this.model.on('change:cmsFieldData', this.render, this);
+    this.model.bind('change', this.render, this);
   },
 
   cloudCall: function(){
@@ -38,6 +38,12 @@ App.View.CloudcallView = App.View.BaseView.extend({
     this.$el.find('.hidden').removeClass('hidden');
     this.$el.find('.response_content').removeClass('alert-error').addClass('alert-success').html('Response: ' + res.text);
     this.$el.find('.extra_response').removeClass('hidden');
+  },
+
+  close: function(){
+    this.remove();
+    this.unbind();
+    this.model.unbind("change", this.modelChanged);
   }
 
 });
