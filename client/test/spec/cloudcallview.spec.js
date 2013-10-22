@@ -14,20 +14,24 @@ describe('render cloud action page', function(){
   });
 
   it('should display content', function(){
-    expect(pageDiv.find('.content_view .container h1').length).toEqual(1);
-    expect(pageDiv.find('.content_view .container h1').text()).toMatch(/mobile cms/i);
-    expect(pageDiv.find('.cloud-action-button').length).toEqual(1);
+    expect(pageDiv.find('.content_view .container .appheading').length).toEqual(1);
+    expect(pageDiv.find('.content_view .container .appheading').text()).toMatch(/mobile cms/i);
+    expect(pageDiv.find('.cms-refresh-button').length).toEqual(1);
     expect(pageDiv.find('.response_content').html()).toEqual('');
     expect(pageDiv.find('.extra_response').hasClass('hidden')).toBe(true);
   });
 
   it('cms refresh button should be triggered and extra content should be shown', function(){
-    //mock $fh.act
+    //mock $fh.cms...
     $fh.cms.updateAll = function(success, fail){
       success();
+      expect(pageDiv.find('.response_content').html()).toMatch(/Successful mCMS refresh/i);
+      expect(pageDiv.find('.extra_response').hasClass('hidden')).toBe(false);
     };
-    pageDiv.find('.cloud-action-button').trigger('click');
-    expect(pageDiv.find('.response_content').html()).toMatch(/Successful mCMS refresh/i);
-    expect(pageDiv.find('.extra_response').hasClass('hidden')).toBe(false);
+    $fh.cms.getField = function(params, success, fail){
+      success("tset field value");
+      expect(pageDiv.find('.content_view .container .appdata').text()).toMatch(/tset field value/i);
+    };
+    pageDiv.find('.cms-refresh-button').trigger('click');
   });
 });

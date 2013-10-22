@@ -25,7 +25,8 @@ App.models.cloudcallPage = new App.Model.PageModel({
   header: 'Mobile CMS',
   text: 'This client App is now connected to its matching Node.js cloud code on FeedHenry. Tap the button to request a refresh of CMS data from the cloud.',
   buttonText: 'Refresh CMS',
-  extraRes: ''
+  extraRes: '',
+  cmsFieldData: "Initial App Data"
 });
 
 App.models.statsPage = new App.Model.PageModel({

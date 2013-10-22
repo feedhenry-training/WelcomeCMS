@@ -8,7 +8,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 
 
   buffer += " "
-    + "\n <div class=\"content_view\">\n  <div class=\"container\">\n    <h1>";
+    + "\n <div class=\"content_view\">\n  <div class=\"container\">\n    <h1 class=\"appheading\">";
   if (stack1 = helpers.header) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.header; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -16,7 +16,11 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (stack1 = helpers.text) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.text; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</p>\n    <p><a class=\"btn btn-primary btn-lg cloud-action-button\"><i class=\"icon-external-link-sign\"></i> ";
+    + "</p>\n    <p><a class=\"btn btn-primary btn-lg cms-refresh-button\"><i class=\"icon-external-link-sign\"></i> ";
+  if (stack1 = helpers.buttonText) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.buttonText; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</a></p>\n    <p><a class=\"btn btn-primary btn-lg cms-button\"><i class=\"icon-external-link-sign\"></i> ";
   if (stack1 = helpers.buttonText) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.buttonText; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -24,7 +28,11 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (stack1 = helpers.extraRes) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.extraRes; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "\n    </p>\n  </div>\n</div>";
+    + "\n    </p>\n    <h1 class=\"appdata\">";
+  if (stack1 = helpers.cmsFieldData) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.cmsFieldData; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</h1>\n  </div>\n</div>";
   return buffer;
   });
 

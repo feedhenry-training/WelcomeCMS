@@ -19,6 +19,12 @@ App.View.CloudcallView = App.View.BaseView.extend({
     $fh.cms.updateAll(function () {
       console.log('Successful mCMS refresh');
       self.gotData({text:'Successful mCMS refresh'});
+      $fh.cms.getField({path:"anewsection28.section1_field33"}, function(value) {
+        self.model.cmsFieldData = value;
+        console.log('Retrieved field value: ', value);
+      }, function(err) {
+        console.log('error retrieving field value, err: ', err);
+      });
     }, function(err) {
       console.log('Failed mCMS refresh');
       self.dataError('Failed mCMS refresh', err);
