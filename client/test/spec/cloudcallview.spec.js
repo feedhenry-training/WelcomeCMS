@@ -25,12 +25,14 @@ describe('render cloud action page', function(){
     //mock $fh.cms...
     $fh.cms.updateAll = function(success, fail){
       success();
-      expect(pageDiv.find('.response_content').html()).toMatch(/Successful mCMS refresh/i);
-      expect(pageDiv.find('.extra_response').hasClass('hidden')).toBe(false);
+      // expect(pageDiv.find('.response_content').html()).toMatch(/Successful mCMS refresh/i);
+      // expect(pageDiv.find('.extra_response').hasClass('hidden')).toBe(false);
     };
     $fh.cms.getField = function(params, success, fail){
       success("tset field value");
-      expect(pageDiv.find('.content_view .container .appdata').text()).toMatch(/tset field value/i);
+      // expect(pageDiv.find('.content_view .container .appdata').text()).toMatch(/tset field value/i);
+      expect(pageDiv.find('.response_content').html()).toMatch(/tset field value/i);
+      expect(pageDiv.find('.extra_response').hasClass('hidden')).toBe(false);
     };
     pageDiv.find('.cms-refresh-button').trigger('click');
   });

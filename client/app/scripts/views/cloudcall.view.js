@@ -6,7 +6,7 @@ App.View.CloudcallView = App.View.BaseView.extend({
   model: App.models.cloudcallPage,
 
   events: {
-    'click .cloud-action-button': 'cloudCall'
+    'click .cms-refresh-button': 'cloudCall'
   },
 
   initialize: function(){
@@ -18,9 +18,9 @@ App.View.CloudcallView = App.View.BaseView.extend({
 
     $fh.cms.updateAll(function () {
       console.log('Successful mCMS refresh');
-      self.gotData({text:'Successful mCMS refresh'});
       $fh.cms.getField({path:"anewsection28.section1_field33"}, function(value) {
-        self.model.cmsFieldData = value;
+        self.gotData({text:value});
+        //self.model.cmsFieldData = value;
         console.log('Retrieved field value: ', value);
       }, function(err) {
         console.log('error retrieving field value, err: ', err);
