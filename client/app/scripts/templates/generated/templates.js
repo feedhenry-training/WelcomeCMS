@@ -43,7 +43,7 @@ function program1(depth0,data) {
   }
 
   buffer += " "
-    + "\n <div class=\"content_view\">\n  <div class=\"container cmslist\">\n    <h1>";
+    + "\n <div class=\"content_view\">\n  <div class=\"container\">\n    <h1>";
   if (stack1 = helpers.header) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.header; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
