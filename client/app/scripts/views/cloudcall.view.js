@@ -19,11 +19,15 @@ App.View.CloudcallView = App.View.BaseView.extend({
 
     $fh.cms.updateAll(function () {
       console.log('Successful mCMS refresh');
-      $fh.cms.getField({path:"anewsection28.section1_field33"}, function(value) {
-        self.gotData({text:value});
-        //self.model.set("cmsFieldData", value);
-        //self.model.cmsFieldData = value;
-        console.log('Retrieved field value: ', value);
+      $fh.cms.getField({path:"page1.name"}, function(page1Name) {
+        console.log('Retrieved field value: ', page1Name);
+        $fh.cms.getField({path:"page1.address"}, function(page1Address) {
+          console.log('Retrieved field value: ', page1Address);
+          self.gotData({name: page1Name, address: page1Address});
+          console.log('Retrieved field value: ', page1Address);
+        }, function(err) {
+          console.log('error retrieving field value, err: ', err);
+        });
       }, function(err) {
         console.log('error retrieving field value, err: ', err);
       });
@@ -35,10 +39,13 @@ App.View.CloudcallView = App.View.BaseView.extend({
   },
 
   gotData: function(res){
-    this.$el.find('.hidden').removeClass('hidden');
-    this.$el.find('.response_content').removeClass('alert-error').addClass('alert-success').html('Response: ' + res.text);
-    this.$el.find('.extra_response').removeClass('hidden');
+    //this.$el.find('.hidden').removeClass('hidden');
+    //this.$el.find('.response_content').removeClass('alert-error').addClass('alert-success').html('Response: ' + res.text);
+    //this.$el.find('.extra_response').removeClass('hidden');
+    this.$el.find('.appdata_name').html('' + res.name);
+    this.$el.find('.appdata_address').html('' + res.address);
   }
+
   // ,
 
   // emptyFirst: function() {

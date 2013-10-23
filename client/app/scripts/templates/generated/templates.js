@@ -24,11 +24,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (stack1 = helpers.extraRes) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.extraRes; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "\n    </p>\n    <h1 class=\"appdata\">";
-  if (stack1 = helpers.cmsFieldData) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.cmsFieldData; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</h1>\n  </div>\n</div>";
+    + "\n    </p>\n    <p class=\"appdata_name\"></p>\n    <p class=\"appdata_address\"></p>\n  </div>\n</div>";
   return buffer;
   });
 
