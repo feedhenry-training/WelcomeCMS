@@ -22,8 +22,8 @@ App.models.introPage = new App.Model.PageModel({
 
 App.models.cloudcallPage = new App.Model.PageModel({
   title: 'Mobile CMS',
-  header: 'Mobile CMS',
-  text: 'This client App is now connected to its matching Node.js cloud code on FeedHenry. Tap the button to request a refresh of CMS data from the cloud.',
+  header: 'Simple CMS Fields',
+  text: 'Using Studio you can change the data show in this screen of the app. Tap the button to request a refresh of CMS data from the cloud. The fields displayed here are in section page1, and are called name and address',
   buttonText: 'Refresh CMS',
   extraRes: '',
   cmsFieldData: "Initial App Data"
