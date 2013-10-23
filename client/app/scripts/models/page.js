@@ -9,7 +9,9 @@ App.models.introPage = new App.Model.PageModel({
   header: 'Welcome To FeedHenry',
   text: 'Learn about and interact with mCMS',
   nextButtonText: 'Let\'s Start',
-  menuItems: [{className: 'cloud-action', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS', menuSubTitle: 'Try it now', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'cloud'}
+  menuItems: [
+    {className: 'cloud-action', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS', menuSubTitle: 'Try it now', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'cloud'},
+    {className: 'cms-list', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS List Page', menuSubTitle: 'CMS Lists', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'gears'}
         /*,
               {className: 'data-browser', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Data Browser', menuSubTitle: 'Use MongoDB', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'table'},
               {className: 'nodejs-page', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Powered By Nodejs', menuSubTitle: 'Cloud code', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'bolt'},
@@ -17,7 +19,7 @@ App.models.introPage = new App.Model.PageModel({
               {className: 'weather-sample', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Example', menuSubTitle: 'Use Location', responsiveClass: 'col-md-2 col-md-offset-2 col-lg-2 col-lg-offset-0', iconClass: 'sun'},
               {className: 'stats-analytics', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Stats', menuSubTitle: 'See the data', responsiveClass: 'col-md-2 col-md-offset-4 col-lg-2 col-lg-offset-0', iconClass: 'bar-chart'} 
         */
-             ]
+  ]
 });
 
 App.models.cloudcallPage = new App.Model.PageModel({
@@ -64,18 +66,13 @@ App.models.weatherPage = new App.Model.PageModel({
   titleWidth: '180'
 });
 
-App.models.integrationPage = new App.Model.PageModel({
-  title: 'Cloud Integration',
-  header: 'Cloud Integration',
+App.models.cmsListPage = new App.Model.PageModel({
+  title: 'cms List Page',
+  header: 'CMS list',
   titleWidth: '150',
-  text: 'You can easily integrate with all of your existing back-end systems using Cloud Plugins. Check out the the App Studio to see how to connect to Databases, Messaging, Analytics, SaaS, eCommerce, Logging, Data Storage, File Storage, Testing, Tools and File Storage. A few examples including:',
-  plugins:[{img:'mysql.png'},
-          {img: 'oracle.png'},
-          {img: 'stripe.png'},
-          {img: 'loggly.png'},
-          {img: 's3.png'},
-          {img: 'mixpanel.png'},
-          {img: 'salesforce.png'},
-          {img: 'sendgrid.png'},
-          {img: 'paypal.png'}]
+  text: 'You can easily integrate with mCMS. Check out the the App Studio to see how to change the following data',
+  paragraphs:[
+    {paragraph:'The Quick brown fox jumped over the lazy dogs.'},
+    {paragraph: 'Hello World'}
+  ]
 });
