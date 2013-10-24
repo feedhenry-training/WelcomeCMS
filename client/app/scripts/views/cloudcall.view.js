@@ -26,6 +26,9 @@ App.View.CloudcallView = App.View.BaseView.extend({
           self.gotData({name: page1Name, address: page1Address});
           console.log('Retrieved field value: ', page1Address);
           App.models.cmsListPage.set("paragraphs", [{paragraph:"one"}, {paragraph:"two"}, {paragraph:"three"}]);
+          // $fh.cms.getList({path: 'page2.list'}, function (listValue) {
+          //   App.models.cmsListPage.set("paragraphs", listValue);
+          // }, function (err) {console.log('Error retrieving list: ', err);});
         }, function(err) {
           console.log('error retrieving field value, err: ', err);
         });

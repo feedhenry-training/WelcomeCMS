@@ -5,6 +5,7 @@ App.View.BaseView = Backbone.View.extend({
   className: 'page_view',
   render: function(){
     this.navbar = new App.View.NavbarView({title: this.model.get('title'), titleWidth: this.model.get('titleWidth')});
+    this.$el.empty();
     this.$el.append(this.navbar.render());
     this.$el.append(this.template(this.model.toJSON()));
     return this.$el;
