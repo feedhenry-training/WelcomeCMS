@@ -7,7 +7,7 @@ App.View.CMSListView = App.View.BaseView.extend({
 
   initialize: function(){
     var self = this;
-    this.listenTo(this.model, 'change', function () {console.log('address change - calling render');self.render();});
+    this.listenTo(this.model, 'change', function () {console.log('list change - calling render');self.render();});
   }
 
 });

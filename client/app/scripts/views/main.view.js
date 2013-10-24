@@ -93,7 +93,6 @@ App.View.MainView = Backbone.View.extend({
   cmsRefresh: function(){
     console.log('refreshing');
     var self = this;
-          self.setAddressData.call(self);
 
     $fh.cms.updateAll(function () {
       console.log('Successful mCMS refresh');
