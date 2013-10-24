@@ -42,6 +42,7 @@ App.View.MainView = Backbone.View.extend({
     if(!this.cmsAddressView){
 
       var cmsAddressView = new App.View.CMSAddressesView();
+      this.martinView = cmsAddressView;
       this.cmsAddressView = cmsAddressView.render();
     }
     this.showPage(this.cmsAddressView);
@@ -77,11 +78,9 @@ App.View.MainView = Backbone.View.extend({
   },
 
   setAddressData: function () {
-    var self = this;
     $fh.cms.getList({path: 'page2.list'}, function (list) {
       console.log("setting collection to:", list);
       App.collections.addresses.set(list);
-      self.cmsAddressView.render.call(self.cmsAddressView);
     }, function (err) {
       console.log('error retrieving list data, err: ', err);
     });
@@ -94,6 +93,7 @@ App.View.MainView = Backbone.View.extend({
   cmsRefresh: function(){
     console.log('refreshing');
     var self = this;
+          self.setAddressData.call(self);
 
     $fh.cms.updateAll(function () {
       console.log('Successful mCMS refresh');
@@ -106,7 +106,7 @@ App.View.MainView = Backbone.View.extend({
           App.models.cloudcallPage.set("page1Name", page1Name);
           App.models.cloudcallPage.set("page1Address", page1Address);
           self.setListData();
-          self.setAddressData.call(self);
+          self.setAddressData();
           // $fh.cms.getList({path: 'page2.list'}, function (listValue) {
           //   App.models.cmsListPage.set("paragraphs", listValue);
           // }, function (err) {console.log('Error retrieving list: ', err);});
