@@ -28,7 +28,7 @@ module.exports = function populate(cb){
         function addSections (callback){
           var sections = ["page1","page2","page3"];
           async.each(sections,function (sName, cb2){
-            $fs.cms.addSection({"name":sName,"parent":"","modifiedBy":"test@test.com"},cb2);
+            $fh.cms.addSection({"name":sName,"parent":"","modifiedBy":"test@test.com"},cb2);
           },callback);
         },
         function setSection(callback){
