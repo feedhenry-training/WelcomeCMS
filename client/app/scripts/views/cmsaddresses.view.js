@@ -12,7 +12,7 @@ App.View.CMSAddressesView = Backbone.View.extend({
   initialize: function(){
     this.collection = App.collections.addresses;
     var self = this;
-    this.listenTo(this.collection, 'change', function () {console.log('address change - calling render');self.render();});
+    this.listenTo(this.collection, 'reset', function () {console.log('address change - calling render');self.render();});
   },
 
   render: function() {

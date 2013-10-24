@@ -80,7 +80,7 @@ App.View.MainView = Backbone.View.extend({
   setAddressData: function () {
     $fh.cms.getList({path: 'page2.list'}, function (list) {
       console.log("setting collection to:", list);
-      App.collections.addresses.set(list);
+      App.collections.addresses.reset(list);
     }, function (err) {
       console.log('error retrieving list data, err: ', err);
     });
