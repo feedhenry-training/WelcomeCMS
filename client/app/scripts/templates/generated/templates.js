@@ -123,7 +123,7 @@ function program1(depth0,data) {
   }
 
   buffer += " "
-    + "\n<nav class=\"navbar navbar-default\" role=\"navigation\">\n<div class=\"nav pull-left\">\n  <a class=\"btn back\"><i class=\"icon-chevron-left icon-2x\"></i></a>\n</div>\n<div class=\"navbar-title\" ";
+    + "\n<nav class=\"navbar navbar-default\" role=\"navigation\">\n<div class=\"nav pull-left\">\n  <a class=\"btn back\"><i class=\"icon-chevron-left icon-2x\"></i></a>\n  <a class=\"btn refresh\"><i class=\"icon-refresh icon-2x\"></i></a>\n</div>\n<div class=\"navbar-title\" ";
   stack1 = helpers['if'].call(depth0, depth0.titleWidth, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += ">\n<div class=\"nav navbar-text\">";

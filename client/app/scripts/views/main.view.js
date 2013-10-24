@@ -1,4 +1,4 @@
-/*global App, Backbone, _, Effeckt*/
+/*global App, Backbone, _, Effeckt, $fh*/
 /* Backbone View */
 App.View.MainView = Backbone.View.extend({
 
@@ -11,6 +11,7 @@ App.View.MainView = Backbone.View.extend({
     hash[eventName + ' .nodejs-page'] = 'nodePage';
     hash[eventName + ' .weather-sample'] = 'weatherPage';
     hash[eventName + ' .stats-analytics'] = 'analyticsPage'; */
+    hash[eventName + ' .btn.refresh'] = 'cmsRefresh';
     hash[eventName + ' .btn.back'] = 'backToIntro';
     return hash;
   },
@@ -42,6 +43,36 @@ App.View.MainView = Backbone.View.extend({
     }
     this.showPage(this.cmsListView);
   },
+
+  cmsRefresh: function(){
+    console.log('refreshing');
+    var self = this;
+
+    $fh.cms.updateAll(function () {
+      console.log('Successful mCMS refresh');
+      $fh.cms.getField({path:"page1.name"}, function(page1Name) {
+        console.log('Retrieved field value: ', page1Name);
+        $fh.cms.getField({path:"page1.address"}, function(page1Address) {
+          console.log('Retrieved field value: ', page1Address);
+          //self.gotData({name: page1Name, address: page1Address});
+          console.log('Retrieved field value: ', page1Address);
+          App.models.cmsListPage.set("paragraphs", [{paragraph:"one"}, {paragraph:"two"}, {paragraph:"three"}]);
+          // $fh.cms.getList({path: 'page2.list'}, function (listValue) {
+          //   App.models.cmsListPage.set("paragraphs", listValue);
+          // }, function (err) {console.log('Error retrieving list: ', err);});
+        }, function(err) {
+          console.log('error retrieving field value, err: ', err);
+        });
+      }, function(err) {
+        console.log('error retrieving field value, err: ', err);
+      });
+    }, function(err) {
+      console.log('Failed mCMS refresh');
+      self.dataError('Failed mCMS refresh', err);
+    });
+
+  },
+
 
 /*
   dataBrowserPage: function(){
