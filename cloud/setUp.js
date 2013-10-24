@@ -124,7 +124,7 @@ module.exports = function populate(cb){
                 "binaryUrl": "",
                 "binaryHash": "",
                 "data":[{
-                  "paragraph":"paragraph",
+                  "paragraph":"Some Paragraph data",
                   "address":"Cleaboy Business Park, Waterford"
                 }],
                 "fields":[{
