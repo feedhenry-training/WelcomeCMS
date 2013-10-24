@@ -38,7 +38,9 @@ App.View.MainView = Backbone.View.extend({
   },
 
   cmsAddressPage: function(){
+    console.log('calling CMS address page');
     if(!this.cmsAddressView){
+
       var cmsAddressView = new App.View.CMSAddressesView();
       this.cmsAddressView = cmsAddressView.render();
     }
@@ -75,11 +77,11 @@ App.View.MainView = Backbone.View.extend({
   },
 
   setAddressData: function () {
-    // $fh.cms.getList({path: 'pa
+    var self = this;
     $fh.cms.getList({path: 'page2.list'}, function (list) {
       console.log("setting collection to:", list);
       App.collections.addresses.set("addresses", list);
-      this.cmsAddressView.render.call(this.cmsAddressView);
+      self.cmsAddressView.render.call(self.cmsAddressView);
     }, function (err) {
       console.log('error retrieving list data, err: ', err);
     });
