@@ -1,5 +1,8 @@
 var async = require('async');
 
+var section1_name = 'page1';
+var section2_name = 'page2';
+var section3_name = 'page3';
 
 module.exports = function populate(cb){
   setTimeout(function (){
@@ -27,45 +30,45 @@ module.exports = function populate(cb){
           });
         },
         function addSections (callback){
-          var sections = ["page1","page2","page3"];
+          var sections = [section1_name, section2_name, section3_name];
           async.each(sections,function (sName, cb2){
-           $fh.cms.addSection({"name":sName,"parent":"","modifiedBy":"test@test.com","path":sName},cb2);
+            $fh.cms.addSection({"name":sName,"parent":"","modifiedBy":"test@test.com","path":sName},cb2);
           },callback);
         },
         function setSection(callback){
-          var fields = {
-            "page1":[
-              {
-                "name":"name",
-                "section":"page1",
-                "type":"string",
-                "modifiedBy":"test@test.com",
-                "value":"FeedHenry",
-                "binaryFileName": "",
-                "binaryContentType": "",
-                "binaryUrl": "",
-                "binaryHash": "",
-                "data":[],
-                "fields":[]
-              },
-              {
-                "name":"address",
-                "section":"page1",
-                "type":"paragraph",
-                "modifiedBy":"test@test.com",
-                "value":"Cleaboy Business Park, Waterford",
-                "binaryFileName": "",
-                "binaryContentType": "",
-                "binaryUrl": "",
-                "binaryHash": "",
-                "data":[],
-                "fields":[]
-              }
-            ],
-            "page2":[
+          var fields = {};
+          fields[section1_name] = [
+            {
+              "name":"name",
+              "section": section1_name,
+              "type":"string",
+              "modifiedBy":"test@test.com",
+              "value":"FeedHenry",
+              "binaryFileName": "",
+              "binaryContentType": "",
+              "binaryUrl": "",
+              "binaryHash": "",
+              "data":[],
+              "fields":[]
+            },
+            {
+              "name":"address",
+              "section": section1_name,
+              "type":"paragraph",
+              "modifiedBy":"test@test.com",
+              "value":"Cleaboy Business Park, Waterford",
+              "binaryFileName": "",
+              "binaryContentType": "",
+              "binaryUrl": "",
+              "binaryHash": "",
+              "data":[],
+              "fields":[]
+            }
+          ];
+          fields[section2_name] = [
               {
                 "name":"list",
-                "section":"page2",
+                "section": section2_name,
                 "type":"list",
                 "modifiedBy":"test@test.com",
                 "value":"",
@@ -73,10 +76,12 @@ module.exports = function populate(cb){
                 "binaryContentType": "",
                 "binaryUrl": "",
                 "binaryHash": "",
-                "data":[{
-                  "name":"Feedhenry",
-                  "address":"Cleaboy Business Park, Waterford"
-                }],
+                "data":[
+                  { "name": "Feedhenry Waterford", "address": "Second Floor,\nUnit 3B,\nCleaboy Business Park,\nOld Kilmeaden Road,\nWaterford."},
+                  { "name": "Feedhenry Dublin", "address": "12 Duke Lane Upper,\nDublin 2,\nIreland"},
+                  { "name": "Feedhenry UK", "address": "Knyvett House,\nWatermans Business Park,\nThe Causeway,\nStaines,\nSurrey,\nTW18 3BA,\nEngland"},
+                  { "name": "Feedhenry USA", "address": "15 New England Executive Park,\nBurlington,\nMA 01803,\nUSA"}
+                ],
                 "fields":[{
                   "name":"name",
                   "type":"string"
@@ -85,14 +90,14 @@ module.exports = function populate(cb){
                   "type":"paragraph"
                 }]
               }
-            ],
-            "page3":[
+            ];
+          fields[section3_name] = [
               {
                 "name":"title",
-                "section":"page3",
+                "section":section3_name,
                 "type":"string",
                 "modifiedBy":"test@test.com",
-                "value":"FeedHenry",
+                "value":"CMS Lists",
                 "binaryFileName": "",
                 "binaryContentType": "",
                 "binaryUrl": "",
@@ -102,10 +107,10 @@ module.exports = function populate(cb){
               },
               {
                 "name":"subtitle",
-                "section":"page3",
+                "section":section3_name,
                 "type":"string",
                 "modifiedBy":"test@test.com",
-                "value":"Cleaboy Business Park, Waterford",
+                "value":"This sho an example of simple CMS lists",
                 "binaryFileName": "",
                 "binaryContentType": "",
                 "binaryUrl": "",
@@ -115,7 +120,7 @@ module.exports = function populate(cb){
               },
               {
                 "name":"list",
-                "section":"page3",
+                "section":section3_name,
                 "type":"list",
                 "modifiedBy":"test@test.com",
                 "value":"",
@@ -123,15 +128,13 @@ module.exports = function populate(cb){
                 "binaryContentType": "",
                 "binaryUrl": "",
                 "binaryHash": "",
-                "data":[{
-                  "paragraph":"Some Paragraph data",
-                  "address":"Cleaboy Business Park, Waterford"
-                }],
+                "data":[
+                  { "paragraph":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at volutpat mauris. In et tellus porta, lacinia ligula at, vestibulum augue. Donec a pretium libero, quis accumsan ipsum. Sed cursus quam non laoreet malesuada. Nam ut eros et dolor gravida euismod. Nam in faucibus arcu. Maecenas sed justo ut odio accumsan euismod. Nam a orci quis leo placerat tincidunt elementum at eros. Vivamus non lectus ac nulla volutpat viverra sed at tortor. Pellentesque pretium neque justo, aliquam lacinia risus gravida vitae. Ut eu interdum magna, quis congue odio. Duis sed velit eget dolor faucibus ultricies a vitae metus. Donec sagittis hendrerit viverra. In commodo nulla et nunc euismod suscipit. Duis suscipit, lorem non ornare vehicula, nulla nibh euismod sapien, non accumsan ligula purus a lorem."},
+                  { "paragraph":"Nunc tincidunt egestas porttitor. Aliquam interdum vulputate lectus, in posuere metus tempor a. Sed vel diam et turpis interdum posuere a vel erat. Donec semper purus id arcu gravida, at congue lorem feugiat. Pellentesque ultrices dignissim bibendum. Suspendisse placerat scelerisque interdum. Sed vitae tortor cursus nunc laoreet pretium id quis dolor. Nullam egestas venenatis odio, sit amet euismod lorem porta eu. Mauris nulla odio, egestas non odio pulvinar, condimentum cursus tellus. Curabitur vehicula condimentum tincidunt."},
+                  { "paragraph":"Vivamus a nisi at sapien pretium blandit. Phasellus vitae justo condimentum arcu adipiscing rhoncus. Morbi auctor urna eget tellus placerat, lobortis bibendum leo sagittis. Aenean gravida ornare lorem, id porta enim volutpat vitae. Aliquam sit amet malesuada tellus. Suspendisse potenti. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer aliquam nulla vitae odio fringilla tempor. Sed massa libero, cursus nec nisl eu, fringilla condimentum turpis. Fusce imperdiet felis urna, ut placerat velit semper a. Nulla quam lectus, tempor nec dolor a, pretium mollis turpis. Quisque ac rhoncus nisl. Cras fringilla quis velit eget pharetra. Donec varius nisi vitae augue tincidunt porttitor."}
+                ],
                 "fields":[{
                   "name":"paragraph",
-                  "type":"paragraph"
-                },{
-                  "name":"address",
                   "type":"paragraph"
                 }]
               }
