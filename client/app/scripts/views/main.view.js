@@ -7,6 +7,7 @@ App.View.MainView = Backbone.View.extend({
     var hash = {};
     hash[eventName + ' .cloud-action'] = 'cloudActionPage';
     hash[eventName + ' .cms-list'] = 'cmsListPage';
+    hash[eventName + ' .cms-address'] = 'cmsAddressPage';
 /*    hash[eventName + ' .data-browser'] = 'dataBrowserPage';
     hash[eventName + ' .nodejs-page'] = 'nodePage';
     hash[eventName + ' .weather-sample'] = 'weatherPage';
@@ -19,7 +20,7 @@ App.View.MainView = Backbone.View.extend({
   initialize: function(options){
     this.mainViewContainer = options.mainContainer;
     this.pageViewContainer = options.pageContainer;
-    _.bindAll(this, 'cloudActionPage', 'cmsListPage', /* 'dataBrowserPage', 'nodePage', 'cloudIntegrationPage', 'weatherPage', 'analyticsPage', */ 'backToIntro');
+    _.bindAll(this, 'cloudActionPage', 'cmsListPage', 'cmsAddressPage', 'backToIntro');
   },
 
   render: function(){
@@ -34,6 +35,14 @@ App.View.MainView = Backbone.View.extend({
       this.cloudCallView = cloudCallView.render();
     }
     this.showPage(this.cloudCallView);
+  },
+
+  cmsAddressPage: function(){
+    if(!this.cmsAddressView){
+      var cmsAddressView = new App.View.CMSAddressView();
+      this.cmsAddressView = cmsAddressView.render();
+    }
+    this.showPage(this.cmsAddressView);
   },
 
   cmsListPage: function(){

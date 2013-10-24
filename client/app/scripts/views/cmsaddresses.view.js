@@ -1,6 +1,6 @@
 /*global App*/
 /* Backbone View */
-App.View.CMSListView = App.View.BaseView.extend({
+App.View.CMSAddressesView = App.View.BaseView.extend({
 
   //template: App.Templates.cmslist,
   //model: App.models.cmsListPage,
@@ -19,7 +19,7 @@ App.View.CMSListView = App.View.BaseView.extend({
     this.$el.empty();
     this.$el.append(this.navbar.render());
 
-    var tpl = App.Templates.cmslist({addresses: this.collection.toJSON()});
+    var tpl = App.Templates.cmsaddresses({addresses: this.collection.toJSON()});
     this.$el.append(tpl);
     return this.$el;
   },

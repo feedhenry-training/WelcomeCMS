@@ -9,8 +9,8 @@ describe('render cloud action page', function(){
   it('should display navbar', function(){
     expect(pageDiv.find('.navbar').length).toEqual(1);
     expect(pageDiv.find('.navbar .btn.back').length).toEqual(1);
-    expect(pageDiv.find('.navbar-text').length).toEqual(1);
-    expect(pageDiv.find('.navbar-text').text()).toMatch(/mobile cms/i);
+    expect(pageDiv.find('.navbar-text2').length).toEqual(1);
+    expect(pageDiv.find('.navbar-text2').text()).toMatch(/mobile cms/i);
   });
 
   it('should display content', function(){

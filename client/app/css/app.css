@@ -96,6 +96,11 @@ h6 {
   color: #ffffff;
 }
 
+.navbar-text2 {
+  padding-top: 10px;
+  color: #ffffff;
+}
+
 .navbar .btn.back {
   width: 75px;
   height: 50px;
