@@ -46,14 +46,11 @@ App.View.MainView = Backbone.View.extend({
 
   setActualListData: function () {
     // $fh.cms.getList({path: 'page2.list'}, function (listValue) {
-      // $fh.cms.getListSize({path: 'page2.list'}, function (listSize) {
-
-
-    //   App.models.cmsListPage.set("paragraphs", listValue);
-    // }, function (err) {console.log('Error retrieving list: ', err);});
-      // )
-    //   App.models.cmsListPage.set("paragraphs", listValue);
-    // }, function (err) {console.log('Error retrieving list: ', err);});
+    $fh.cms.getList({path: 'page2.list'}, function (list) {
+      App.models.cmsListPage.set("paragraphs", list);
+    }, function (err) {
+      console.log('error retrieving list data, err: ', err);
+    });
   },
 
   setListData: function () {

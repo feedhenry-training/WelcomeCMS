@@ -11,7 +11,7 @@ App.View.CloudcallView = App.View.BaseView.extend({
 
   initialize: function(){
     // _.bindAll(this, 'gotData', 'dataError');
-    // this.listenTo(this.model, 'change', this.render);
+    this.listenTo(this.model, 'change', this.render);
   },
 
   // cloudCall: function(){
