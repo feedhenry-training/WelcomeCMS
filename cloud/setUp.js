@@ -124,7 +124,7 @@ module.exports = function populate(cb){
                 "binaryUrl": "",
                 "binaryHash": "",
                 "data":[{
-                  "name":"paragraph",
+                  "paragraph":"paragraph",
                   "address":"Cleaboy Business Park, Waterford"
                 }],
                 "fields":[{
@@ -143,11 +143,13 @@ module.exports = function populate(cb){
               console.log("error get all ", err);
               callback(err);
             }else{
-              console.log("updating section")
+              console.log("updating section");
               async.each(data.sections,function (sec,cb){
 
-                sec.fields = fields[sec.name];
-                $fh.cms.setSectionStructureAndData(sec,cb);
+                var sectionJson = JSON.stringify(sec);
+                var secDiff = JSON.parse(sectionJson);
+                secDiff.fields = fields[sec.name];
+                $fh.cms.setSectionStructureAndData(secDiff,cb);
               },callback);
             }
           });
