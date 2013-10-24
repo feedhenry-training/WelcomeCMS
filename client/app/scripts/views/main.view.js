@@ -106,7 +106,7 @@ App.View.MainView = Backbone.View.extend({
           App.models.cloudcallPage.set("page1Name", page1Name);
           App.models.cloudcallPage.set("page1Address", page1Address);
           self.setListData();
-          self.setAddressData();
+          self.setAddressData.call(self);
           // $fh.cms.getList({path: 'page2.list'}, function (listValue) {
           //   App.models.cmsListPage.set("paragraphs", listValue);
           // }, function (err) {console.log('Error retrieving list: ', err);});
