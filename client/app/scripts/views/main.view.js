@@ -39,7 +39,7 @@ App.View.MainView = Backbone.View.extend({
 
   cmsAddressPage: function(){
     if(!this.cmsAddressView){
-      var cmsAddressView = new App.View.CMSAddressView();
+      var cmsAddressView = new App.View.CMSAddressesView();
       this.cmsAddressView = cmsAddressView.render();
     }
     this.showPage(this.cmsAddressView);
