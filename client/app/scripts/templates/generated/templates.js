@@ -48,21 +48,6 @@ function program1(depth0,data) {
   return buffer;
   }
 
-function program3(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n      <p>";
-  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</p>\n      <p>";
-  if (stack1 = helpers.address) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.address; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</p>\n    ";
-  return buffer;
-  }
-
   buffer += " "
     + "\n <div class=\"content_view\">\n  <div class=\"container\">\n    <h1>";
   if (stack1 = helpers.header) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
@@ -72,13 +57,10 @@ function program3(depth0,data) {
   if (stack1 = helpers.text) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.text; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</p>\n    <div class=\"row\">\n    <select>\n    ";
+    + "</p>\n    <div class=\"row\">\n    <select>\n      <option value=\"\">Select</option>\n    ";
   stack1 = helpers.each.call(depth0, depth0.addresses, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n    </select>\n\n    <hr />\n    <div id=\"yolks\">\n    ";
-  stack1 = helpers.each.call(depth0, depth0.filtered, {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n    </div>\n  </div>\n</div>";
+  buffer += "\n    </select>\n\n    <hr />\n    <div id=\"yolks\">\n      <p id=\"name\"></p>\n      <p id=\"address\"></p>\n    </div>\n  </div>\n</div>";
   return buffer;
   });
 

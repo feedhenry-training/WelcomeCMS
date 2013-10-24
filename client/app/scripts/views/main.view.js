@@ -74,6 +74,15 @@ App.View.MainView = Backbone.View.extend({
     });
   },
 
+  setAddressData: function () {
+    // $fh.cms.getList({path: 'pa
+    $fh.cms.getList({path: 'page2.list'}, function (list) {
+      App.models.cmsListPage.set("addresses", list);
+    }, function (err) {
+      console.log('error retrieving list data, err: ', err);
+    });
+  },
+
   setDummyListData: function () {
     App.models.cmsListPage.set("paragraphs", [{paragraph:"one"}, {paragraph:"two"}, {paragraph:"three"}]);
   },
@@ -93,6 +102,7 @@ App.View.MainView = Backbone.View.extend({
           App.models.cloudcallPage.set("page1Name", page1Name);
           App.models.cloudcallPage.set("page1Address", page1Address);
           self.setListData();
+          self.setAddressData();
           // $fh.cms.getList({path: 'page2.list'}, function (listValue) {
           //   App.models.cmsListPage.set("paragraphs", listValue);
           // }, function (err) {console.log('Error retrieving list: ', err);});

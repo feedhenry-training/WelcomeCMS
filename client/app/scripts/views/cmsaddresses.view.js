@@ -15,7 +15,7 @@ App.View.CMSAddressesView = App.View.BaseView.extend({
   },
 
   render: function() {
-    this.navbar = new App.View.NavbarView({title: "Title", titleWidth: "A million"});
+    this.navbar = new App.View.NavbarView({title: "CMS Addresses"});
     this.$el.empty();
     this.$el.append(this.navbar.render());
 
@@ -27,7 +27,8 @@ App.View.CMSAddressesView = App.View.BaseView.extend({
   changed: function(e) {
     var selected = $(e.currentTarget).val();
     var model = this.collection.findWhere({name: selected});
-    this.$el.find('#yolks').empty().append(model.get('address'));
+    this.$el.find('#address').empty().append(model.get('address'));
+    this.$el.find('#name').empty().append(model.get('name'));
   }
 
 });
