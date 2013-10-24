@@ -44,6 +44,22 @@ App.View.MainView = Backbone.View.extend({
     this.showPage(this.cmsListView);
   },
 
+  setActualListData: function () {
+    // $fh.cms.getList({path: 'page2.list'}, function (listValue) {
+      // $fh.cms.getListSize({path: 'page2.list'}, function (listSize) {
+
+
+    //   App.models.cmsListPage.set("paragraphs", listValue);
+    // }, function (err) {console.log('Error retrieving list: ', err);});
+      // )
+    //   App.models.cmsListPage.set("paragraphs", listValue);
+    // }, function (err) {console.log('Error retrieving list: ', err);});
+  },
+
+  setListData: function () {
+    App.models.cmsListPage.set("paragraphs", [{paragraph:"one"}, {paragraph:"two"}, {paragraph:"three"}]);
+  },
+
   cmsRefresh: function(){
     console.log('refreshing');
     var self = this;
@@ -58,7 +74,7 @@ App.View.MainView = Backbone.View.extend({
           console.log('Retrieved field value: ', page1Address);
           App.models.cloudcallPage.set("page1Name", page1Name);
           App.models.cloudcallPage.set("page1Address", page1Address);
-          App.models.cmsListPage.set("paragraphs", [{paragraph:"one"}, {paragraph:"two"}, {paragraph:"three"}]);
+          this.setListData();
           // $fh.cms.getList({path: 'page2.list'}, function (listValue) {
           //   App.models.cmsListPage.set("paragraphs", listValue);
           // }, function (err) {console.log('Error retrieving list: ', err);});
