@@ -12,6 +12,11 @@ if(process.env && !process.env.FH_USE_LOCAL_DB && process.env.FH_MONGODB_CONN_UR
   dbUrl = process.env.FH_MONGODB_CONN_URL;
 }
 
+
+//setUp(function (err,ok){
+//   console.log("SET UP IS DONE",err);
+//});
+
 connectDB(dbUrl, function(){
 
 });
