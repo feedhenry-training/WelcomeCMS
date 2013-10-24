@@ -56,6 +56,8 @@ App.View.MainView = Backbone.View.extend({
           console.log('Retrieved field value: ', page1Address);
           //self.gotData({name: page1Name, address: page1Address});
           console.log('Retrieved field value: ', page1Address);
+          App.models.cloudcallPage.set("page1Name", page1Name);
+          App.models.cloudcallPage.set("page1Address", page1Address);
           App.models.cmsListPage.set("paragraphs", [{paragraph:"one"}, {paragraph:"two"}, {paragraph:"three"}]);
           // $fh.cms.getList({path: 'page2.list'}, function (listValue) {
           //   App.models.cmsListPage.set("paragraphs", listValue);

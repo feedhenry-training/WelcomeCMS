@@ -28,7 +28,9 @@ App.models.cloudcallPage = new App.Model.PageModel({
   text: 'Using Studio you can change the data show in this screen of the app. Tap the button to request a refresh of CMS data from the cloud. The fields displayed here are in section page1, and are called name and address',
   buttonText: 'Refresh CMS',
   extraRes: '',
-  cmsFieldData: "Initial App Data"
+  cmsFieldData: "Initial App Data",
+  page1Name: "Initial name value when app installed",
+  page1Address: "Initial address value when app installed"
 });
 
 App.models.statsPage = new App.Model.PageModel({
