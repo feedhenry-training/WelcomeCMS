@@ -58,19 +58,19 @@ App.View.MainView = Backbone.View.extend({
 
   setListData: function () {
     // $fh.cms.getList({path: 'page2.list'}, function (listValue) {
-    $fh.cms.getField({path: 'page3.title'}, function (title) {
+    $fh.cms.getField({path: 'simpleList.title'}, function (title) {
       App.models.cmsListPage.set("header", title);
     }, function (err) {
       console.log('error retrieving list title, err: ', err);
     });
 
-    $fh.cms.getField({path: 'page3.subtitle'}, function (subtitle) {
+    $fh.cms.getField({path: 'simpleList.subtitle'}, function (subtitle) {
       App.models.cmsListPage.set("text", subtitle);
     }, function (err) {
       console.log('error retrieving list subtitle, err: ', err);
     });
 
-    $fh.cms.getList({path: 'page3.list'}, function (list) {
+    $fh.cms.getList({path: 'simpleList.list'}, function (list) {
       App.models.cmsListPage.set("paragraphs", list);
     }, function (err) {
       console.log('error retrieving list data, err: ', err);
@@ -78,7 +78,7 @@ App.View.MainView = Backbone.View.extend({
   },
 
   setAddressData: function () {
-    $fh.cms.getList({path: 'page2.list'}, function (list) {
+    $fh.cms.getList({path: 'addresses.list'}, function (list) {
       console.log("setting collection to:", list);
       App.collections.addresses.reset(list);
     }, function (err) {
@@ -96,9 +96,9 @@ App.View.MainView = Backbone.View.extend({
 
     $fh.cms.updateAll(function () {
       console.log('Successful mCMS refresh');
-      $fh.cms.getField({path:"page1.name"}, function(page1Name) {
+      $fh.cms.getField({path:"simpleFields.name"}, function(page1Name) {
         console.log('Retrieved field value: ', page1Name);
-        $fh.cms.getField({path:"page1.address"}, function(page1Address) {
+        $fh.cms.getField({path:"simpleFields.address"}, function(page1Address) {
           console.log('Retrieved field value: ', page1Address);
           //self.gotData({name: page1Name, address: page1Address});
           console.log('Retrieved field value: ', page1Address);

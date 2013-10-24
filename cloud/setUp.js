@@ -1,8 +1,8 @@
 var async = require('async');
 
-var section1_name = 'page1';
-var section2_name = 'page2';
-var section3_name = 'page3';
+var section1_name = 'simpleFields';
+var section2_name = 'addresses';
+var section3_name = 'simpleList';
 
 module.exports = function populate(cb){
   setTimeout(function (){
