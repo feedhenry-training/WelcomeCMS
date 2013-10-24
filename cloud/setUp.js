@@ -8,9 +8,9 @@ module.exports = function populate(cb){
   setTimeout(function (){
     console.log("running set up");
 
-    if(! $fh || ! $fh.cms){
+    if(! $fh || ! $fh.cms) {
       console.error("CMS IS NOT PRESENT");
-    }else{
+    } else {
       async.series([
         function removeSetions (callback){
           $fh.cms.getAll({}, function (err, data){
@@ -35,7 +35,7 @@ module.exports = function populate(cb){
             $fh.cms.addSection({"name":sName,"parent":"","modifiedBy":"test@test.com","path":sName},cb2);
           },callback);
         },
-        function setSection(callback){
+        function setSection(callback) {
           var fields = {};
           fields[section1_name] = [
             {
@@ -90,7 +90,7 @@ module.exports = function populate(cb){
                   "type":"paragraph"
                 }]
               }
-            ];
+          ];
           fields[section3_name] = [
               {
                 "name":"title",
@@ -138,8 +138,7 @@ module.exports = function populate(cb){
                   "type":"paragraph"
                 }]
               }
-            ]
-          };
+          ];
 
           $fh.cms.getAll({}, function (err, data){
             if(err){
@@ -156,15 +155,14 @@ module.exports = function populate(cb){
               },callback);
             }
           });
-
-
-        }],function (err, ok){
+        }
+      ], function (err, ok){
         console.log("completed set up ", err);
         cb();
       });
     }
 
 
-  },1000);
+  }, 1000);
 
-} ;
+};
