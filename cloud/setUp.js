@@ -16,6 +16,7 @@ module.exports = function populate(cb){
               callback(err);
             }else{
               async.each(data.sections, function (sec, cb1){
+                console.log("removing section ", sec);
                 if(sec._id){
                   $fh.cms.removeSection({"id":sec._id},cb1);
                 }else{
@@ -28,7 +29,7 @@ module.exports = function populate(cb){
         function addSections (callback){
           var sections = ["page1","page2","page3"];
           async.each(sections,function (sName, cb2){
-            $fh.cms.addSection({"name":sName,"parent":"","modifiedBy":"test@test.com"},cb2);
+           $fh.cms.addSection({"name":sName,"parent":"","modifiedBy":"test@test.com","path":sName},cb2);
           },callback);
         },
         function setSection(callback){
@@ -142,7 +143,9 @@ module.exports = function populate(cb){
               console.log("error get all ", err);
               callback(err);
             }else{
+              console.log("updating section")
               async.each(data.sections,function (sec,cb){
+
                 sec.fields = fields[sec.name];
                 $fh.cms.setSectionStructureAndData(sec,cb);
               },callback);
