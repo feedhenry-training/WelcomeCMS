@@ -11,8 +11,8 @@ App.models.introPage = new App.Model.PageModel({
   nextButtonText: 'Let\'s Start',
   menuItems: [
     {className: 'cloud-action', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS', menuSubTitle: 'Try it now', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'cloud'},
-    {className: 'cms-list', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS List Page', menuSubTitle: 'CMS Lists', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'gears'},
-    {className: 'cms-address', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS Address', menuSubTitle: 'CMS Adresses', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'contact'}
+    {className: 'cms-list', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS List Page', menuSubTitle: 'CMS Lists', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'list-alt'},
+    {className: 'cms-address', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS Address', menuSubTitle: 'CMS Adresses', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'user'}
         /*,
               {className: 'data-browser', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Data Browser', menuSubTitle: 'Use MongoDB', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'table'},
               {className: 'nodejs-page', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Powered By Nodejs', menuSubTitle: 'Cloud code', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'bolt'},
@@ -87,7 +87,7 @@ App.Collection.Addresses = Backbone.Collection.extend({
 });
 
 App.collections.addresses = new App.Collection.Addresses([
-    {name: 'FH', address: "Cleayboy"},
+    {name: 'FH', address: "Cleaboy"},
     {name: 'Martin', address: "Tramore"}
   ]);
 
