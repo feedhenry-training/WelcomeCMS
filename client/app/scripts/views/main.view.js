@@ -44,7 +44,7 @@ App.View.MainView = Backbone.View.extend({
     this.showPage(this.cmsListView);
   },
 
-  setActualListData: function () {
+  setListData: function () {
     // $fh.cms.getList({path: 'page2.list'}, function (listValue) {
     $fh.cms.getList({path: 'page2.list'}, function (list) {
       App.models.cmsListPage.set("paragraphs", list);
@@ -53,7 +53,7 @@ App.View.MainView = Backbone.View.extend({
     });
   },
 
-  setListData: function () {
+  setDummyListData: function () {
     App.models.cmsListPage.set("paragraphs", [{paragraph:"one"}, {paragraph:"two"}, {paragraph:"three"}]);
   },
 
