@@ -11,16 +11,16 @@ App.models.introPage = new App.Model.PageModel({
   nextButtonText: 'Let\'s Start',
   menuItems: [
     {className: 'populate-action', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Initialise', menuSubTitle: 'Setup Initial Data', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'off'},
-    {className: 'cloud-action', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS', menuSubTitle: 'Try it now', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'cloud'},
+    {className: 'cloud-action', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS', menuSubTitle: 'Simple Fields', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'cloud'},
     {className: 'cms-list', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS List Page', menuSubTitle: 'CMS Lists', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'list-alt'},
-    {className: 'cms-address', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS Address', menuSubTitle: 'CMS Adresses', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'user'}
+    {className: 'cms-address', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS Address', menuSubTitle: 'CMS Addresses', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'user'}
   ]
 });
 
 App.models.cloudcallPage = new App.Model.PageModel({
   title: 'Mobile CMS',
   header: 'Simple CMS Fields',
-  text: 'Using Studio you can change the data show in this screen of the app. Tap the button to request a refresh of CMS data from the cloud. The fields displayed here are in section page1, and are called name and address',
+  text: 'Using Studio you can change the data show in this screen of the app. Tap the button to request a refresh of CMS data from the cloud. The fields displayed here are in section simpleFields, and are called name and address',
   buttonText: 'Refresh CMS',
   extraRes: '',
   cmsFieldData: "Initial App Data",
