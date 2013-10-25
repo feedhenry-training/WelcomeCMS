@@ -87,8 +87,8 @@ App.Collection.Addresses = Backbone.Collection.extend({
 });
 
 App.collections.addresses = new App.Collection.Addresses([
-    {name: 'FH', address: "Cleaboy"},
-    {name: 'Martin', address: "Tramore"}
+    {name: 'FH', address: "Cleaboy,\nWaterford"},
+    {name: 'Martin', address: "Tramore,\nCo. Waterford"}
   ]);
 
 App.models.cmsAddresses = new App.Model.PageModel({

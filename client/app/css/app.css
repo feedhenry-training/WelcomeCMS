@@ -142,6 +142,11 @@ h6 {
   background-color: #5e7787;
 }
 
+.addressbox {
+  width: 80%;
+  resize: none;
+}
+
 .weather-info p {
   margin-bottom: 0;
 }

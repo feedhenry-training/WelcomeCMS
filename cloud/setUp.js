@@ -77,10 +77,10 @@ module.exports = function populate(cb){
                 "binaryUrl": "",
                 "binaryHash": "",
                 "data":[
-                  { "name": "Feedhenry Waterford", "address": "Second Floor, Unit 3B, Cleaboy Business Park, Old Kilmeaden Road, Waterford."},
-                  { "name": "Feedhenry Dublin", "address": "12 Duke Lane Upper, Dublin 2, Ireland"},
-                  { "name": "Feedhenry UK", "address": "Knyvett House, Watermans Business Park, The Causeway, Staines, Surrey, TW18 3BA, England"},
-                  { "name": "Feedhenry USA", "address": "15 New England Executive Park, Burlington, MA 01803, USA"}
+                  { "name": "Feedhenry Waterford", "address": "Second Floor,\nUnit 3B,\nCleaboy Business Park,\nOld Kilmeaden Road,\nWaterford."},
+                  { "name": "Feedhenry Dublin", "address": "12 Duke Lane Upper,\nDublin 2,\nIreland"},
+                  { "name": "Feedhenry UK", "address": "Knyvett House,\nWatermans Business Park,\nThe Causeway,\nStaines,\nSurrey,\nTW18 3BA,\nEngland"},
+                  { "name": "Feedhenry USA", "address": "15 New England Executive Park,\nBurlington,\nMA 01803,\nUSA"}
                 ],
                 "fields":[{
                   "name":"name",

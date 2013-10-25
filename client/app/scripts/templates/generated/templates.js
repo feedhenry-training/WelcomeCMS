@@ -60,7 +60,7 @@ function program1(depth0,data) {
     + "</p>\n    <div class=\"row\">\n    <select>\n      <option value=\"\">Select</option>\n    ";
   stack1 = helpers.each.call(depth0, depth0.addresses, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n    </select>\n\n    <hr />\n    <div id=\"yolks\">\n      <p id=\"name\"></p>\n      <p id=\"address\"></p>\n    </div>\n  </div>\n</div>";
+  buffer += "\n    </select>\n\n    <hr />\n    <div id=\"yolks\">\n      <p id=\"name\"></p>\n      <textarea readonly class=\"addressbox\" id=\"address\"></textarea>\n    </div>\n  </div>\n</div>";
   return buffer;
   });
 
@@ -149,10 +149,10 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 
 
   buffer += " "
-    + "\n<nav class=\"navbar navbar-default\" role=\"navigation\">\n<div class=\"nav\">\n  <a class=\"btn back pull-left\"><i class=\"icon-chevron-left icon-2x\"></i></a>\n  <span class=\"navbar-text2\">";
+    + "\n<nav class=\"navbar navbar-default\" role=\"navigation\">\n<div class=\"nav\">\n  <a class=\"btn back pull-left\"><i class=\"icon-chevron-left icon-2x\"></i></a>\n  <div class=\"navbar-text2 pull-left\">";
   if (stack1 = helpers.title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.title; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</span>\n  <a class=\"btn refresh pull-right\"><i class=\"icon-refresh icon-2x\"></i></a>\n</div>\n</nav>";
+    + "</div>\n  <a class=\"btn refresh pull-right\"><i class=\"icon-refresh icon-2x\"></i></a>\n</div>\n</nav>";
   return buffer;
   });
