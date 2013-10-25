@@ -158,7 +158,7 @@ module.exports = function populate(cb){
         }
       ], function (err, ok){
         console.log("completed set up ", err);
-        cb();
+        cb(err, {status: "ok"});
       });
     }
 
