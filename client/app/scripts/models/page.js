@@ -31,7 +31,7 @@ App.models.cloudcallPage = new App.Model.PageModel({
 App.models.populatePage = new App.Model.PageModel({
   title: 'Populate CMS',
   header: 'Initialise CMS',
-  text: 'Using Studio you enable CMS for you app, then tap the button to store initial data on the server',
+  text: 'Using Studio you enable CMS for you app, then tap the button to store initial data on the server. This will overwrite any changes you have made to CMS data in Studio. This option is just used to initialise the demo.',
   buttonText: 'Populate',
   extraRes: ''
 });
