@@ -158,7 +158,7 @@ module.exports = function populate(cb){
         }
       ], function (err, ok){
         console.log("completed set up ", err);
-        cb(err, {status: "ok"});
+        cb(err, {status: "CMS Initialised"});
       });
     }
 

@@ -1,4 +1,58 @@
 /*global App, Backbone, _, Effeckt, $fh*/
+
+function doCmsRefresh() {
+  function setListData() {
+    // $fh.cms.getList({path: 'page2.list'}, function (listValue) {
+    $fh.cms.getField({path: 'simpleList.title'}, function (title) {
+      App.models.cmsListPage.set("header", title);
+    }, function (err) {
+      console.log('error retrieving list title, err: ', err);
+    });
+
+    $fh.cms.getField({path: 'simpleList.subtitle'}, function (subtitle) {
+      App.models.cmsListPage.set("text", subtitle);
+    }, function (err) {
+      console.log('error retrieving list subtitle, err: ', err);
+    });
+
+    $fh.cms.getList({path: 'simpleList.list'}, function (list) {
+      App.models.cmsListPage.set("paragraphs", list);
+    }, function (err) {
+      console.log('error retrieving list data, err: ', err);
+    });
+  }
+
+  function setAddressData() {
+    $fh.cms.getList({path: 'addresses.list'}, function (list) {
+      console.log("setting collection to:", list);
+      App.collections.addresses.reset(list);
+    }, function (err) {
+      console.log('error retrieving list data, err: ', err);
+    });
+  }
+
+  $fh.cms.updateAll(function () {
+    console.log('Successful mCMS refresh');
+    $fh.cms.getField({path:"simpleFields.name"}, function(page1Name) {
+      console.log('Retrieved field value: ', page1Name);
+      $fh.cms.getField({path:"simpleFields.address"}, function(page1Address) {
+        console.log('Retrieved field value: ', page1Address);
+        console.log('Retrieved field value: ', page1Address);
+        App.models.cloudcallPage.set("page1Name", page1Name);
+        App.models.cloudcallPage.set("page1Address", page1Address);
+        setListData();
+        setAddressData();
+      }, function(err) {
+        console.log('error retrieving field value, err: ', err);
+      });
+    }, function(err) {
+      console.log('error retrieving field value, err: ', err);
+    });
+  }, function(err) {
+    console.log('Failed mCMS refresh - err: ', err);
+  });
+}
+
 /* Backbone View */
 App.View.MainView = Backbone.View.extend({
 
@@ -61,114 +115,12 @@ App.View.MainView = Backbone.View.extend({
     this.showPage(this.cmsListView);
   },
 
-  setListData: function () {
-    // $fh.cms.getList({path: 'page2.list'}, function (listValue) {
-    $fh.cms.getField({path: 'simpleList.title'}, function (title) {
-      App.models.cmsListPage.set("header", title);
-    }, function (err) {
-      console.log('error retrieving list title, err: ', err);
-    });
-
-    $fh.cms.getField({path: 'simpleList.subtitle'}, function (subtitle) {
-      App.models.cmsListPage.set("text", subtitle);
-    }, function (err) {
-      console.log('error retrieving list subtitle, err: ', err);
-    });
-
-    $fh.cms.getList({path: 'simpleList.list'}, function (list) {
-      App.models.cmsListPage.set("paragraphs", list);
-    }, function (err) {
-      console.log('error retrieving list data, err: ', err);
-    });
-  },
-
-  setAddressData: function () {
-    $fh.cms.getList({path: 'addresses.list'}, function (list) {
-      console.log("setting collection to:", list);
-      App.collections.addresses.reset(list);
-    }, function (err) {
-      console.log('error retrieving list data, err: ', err);
-    });
-  },
-
-  setDummyListData: function () {
-    App.models.cmsListPage.set("paragraphs", [{paragraph:"one"}, {paragraph:"two"}, {paragraph:"three"}]);
-  },
-
   cmsRefresh: function(){
     console.log('refreshing');
-    var self = this;
 
-    $fh.cms.updateAll(function () {
-      console.log('Successful mCMS refresh');
-      $fh.cms.getField({path:"simpleFields.name"}, function(page1Name) {
-        console.log('Retrieved field value: ', page1Name);
-        $fh.cms.getField({path:"simpleFields.address"}, function(page1Address) {
-          console.log('Retrieved field value: ', page1Address);
-          //self.gotData({name: page1Name, address: page1Address});
-          console.log('Retrieved field value: ', page1Address);
-          App.models.cloudcallPage.set("page1Name", page1Name);
-          App.models.cloudcallPage.set("page1Address", page1Address);
-          self.setListData();
-          self.setAddressData();
-          // $fh.cms.getList({path: 'page2.list'}, function (listValue) {
-          //   App.models.cmsListPage.set("paragraphs", listValue);
-          // }, function (err) {console.log('Error retrieving list: ', err);});
-        }, function(err) {
-          console.log('error retrieving field value, err: ', err);
-        });
-      }, function(err) {
-        console.log('error retrieving field value, err: ', err);
-      });
-    }, function(err) {
-      console.log('Failed mCMS refresh');
-      self.dataError('Failed mCMS refresh', err);
-    });
-
+    doCmsRefresh();
   },
 
-
-/*
-  dataBrowserPage: function(){
-    if(!this.databrowserView){
-      var databrowserView = new App.View.DatabrowserView();
-      this.databrowserView = databrowserView.render();
-    }
-    this.showPage(this.databrowserView);
-  },
-
-  nodePage: function(){
-    if(!this.nodeView){
-      var nodeView = new App.View.NodeView();
-      this.nodeView = nodeView.render();
-    }
-    this.showPage(this.nodeView);
-  },
-
-  cloudIntegrationPage: function(){
-    if(!this.integrationView){
-      var integrationView = new App.View.IntegrationView();
-      this.integrationView = integrationView.render();
-    }
-    this.showPage(this.integrationView);
-  },
-
-  weatherPage: function(){
-    if(!this.weatherView){
-      var weatherView = new App.View.WeatherSampleView();
-      this.weatherView = weatherView.render();
-    }
-    this.showPage(this.weatherView);
-  },
-
-  analyticsPage: function(){
-    if(!this.statsView){
-      var statsView = new App.View.StatsView();
-      this.statsView = statsView.render();
-    }
-    this.showPage(this.statsView);
-  },
-*/
   showPage: function(toPage){
     this.pageViewContainer.html(toPage);
     this.doTransition(this.mainViewContainer, this.pageViewContainer, 'slide-from-right', 'slide-to-left');
@@ -207,3 +159,4 @@ App.View.MainView = Backbone.View.extend({
     });
   }
 });
+
