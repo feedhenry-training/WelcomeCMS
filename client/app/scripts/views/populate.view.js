@@ -24,8 +24,8 @@ App.View.PopulateView = App.View.BaseView.extend({
 
   gotData: function(res){
     this.$el.find('.hidden').removeClass('hidden');
-    this.$el.find('.response_content').removeClass('alert-error').addClass('alert-success').html('Response: ' + res.text);
-    this.$el.find('.extra_response').removeClass('hidden');
+    this.$el.find('.response_content').removeClass('alert-error').addClass('alert-success').html('Response: ' + res.status);
+    this.$el.find('.extra_response').removeClass('hidden').html('In got data');
   }
 
 });
