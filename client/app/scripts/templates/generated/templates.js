@@ -156,3 +156,30 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
     + "</div>\n  <a class=\"btn refresh pull-right\"><i class=\"icon-refresh icon-2x\"></i></a>\n</div>\n</nav>";
   return buffer;
   });
+
+this["App"]["Templates"]["populate"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += " "
+    + "\n <div class=\"content_view\">\n  <div class=\"container\">\n    <h1>";
+  if (stack1 = helpers.header) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.header; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</h1>\n    <p>";
+  if (stack1 = helpers.text) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.text; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</p>\n    <p><a class=\"btn btn-primary btn-lg populate-action-button\"><i class=\"icon-external-link-sign\"></i> ";
+  if (stack1 = helpers.buttonText) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.buttonText; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</a></p>\n    <p class=\"response_content alert\"></p>\n    <p class=\"extra_response hidden\">\n      ";
+  if (stack1 = helpers.extraRes) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.extraRes; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\n    </p>\n  </div>\n</div>";
+  return buffer;
+  });

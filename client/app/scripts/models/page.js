@@ -10,16 +10,10 @@ App.models.introPage = new App.Model.PageModel({
   text: 'Learn about and interact with mCMS',
   nextButtonText: 'Let\'s Start',
   menuItems: [
+    {className: 'populate-action', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Initialise', menuSubTitle: 'Setup Initial Data', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'off'},
     {className: 'cloud-action', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS', menuSubTitle: 'Try it now', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'cloud'},
     {className: 'cms-list', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS List Page', menuSubTitle: 'CMS Lists', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'list-alt'},
     {className: 'cms-address', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS Address', menuSubTitle: 'CMS Adresses', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'user'}
-        /*,
-              {className: 'data-browser', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Data Browser', menuSubTitle: 'Use MongoDB', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'table'},
-              {className: 'nodejs-page', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Powered By Nodejs', menuSubTitle: 'Cloud code', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'bolt'},
-              {className: 'cloud-integration', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Cloud Integration', menuSubTitle: 'Use Plugins', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'gears'},
-              {className: 'weather-sample', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Example', menuSubTitle: 'Use Location', responsiveClass: 'col-md-2 col-md-offset-2 col-lg-2 col-lg-offset-0', iconClass: 'sun'},
-              {className: 'stats-analytics', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Stats', menuSubTitle: 'See the data', responsiveClass: 'col-md-2 col-md-offset-4 col-lg-2 col-lg-offset-0', iconClass: 'bar-chart'} 
-        */
   ]
 });
 
@@ -32,6 +26,14 @@ App.models.cloudcallPage = new App.Model.PageModel({
   cmsFieldData: "Initial App Data",
   page1Name: "Initial name value when app installed",
   page1Address: "Initial address value when app installed"
+});
+
+App.models.populatePage = new App.Model.PageModel({
+  title: 'Populate CMS',
+  header: 'Initialise CMS',
+  text: 'Using Studio you enable CMS for you app, then tap the button to store initial data on the server',
+  buttonText: 'Populate',
+  extraRes: ''
 });
 
 App.models.statsPage = new App.Model.PageModel({

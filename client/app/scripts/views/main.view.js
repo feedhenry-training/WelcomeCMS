@@ -5,13 +5,10 @@ App.View.MainView = Backbone.View.extend({
   events: function(){
     var eventName  = 'click';
     var hash = {};
+    hash[eventName + ' .populate-action'] = 'populateActionPage';
     hash[eventName + ' .cloud-action'] = 'cloudActionPage';
     hash[eventName + ' .cms-list'] = 'cmsListPage';
     hash[eventName + ' .cms-address'] = 'cmsAddressPage';
-/*    hash[eventName + ' .data-browser'] = 'dataBrowserPage';
-    hash[eventName + ' .nodejs-page'] = 'nodePage';
-    hash[eventName + ' .weather-sample'] = 'weatherPage';
-    hash[eventName + ' .stats-analytics'] = 'analyticsPage'; */
     hash[eventName + ' .btn.refresh'] = 'cmsRefresh';
     hash[eventName + ' .btn.back'] = 'backToIntro';
     return hash;
@@ -20,13 +17,21 @@ App.View.MainView = Backbone.View.extend({
   initialize: function(options){
     this.mainViewContainer = options.mainContainer;
     this.pageViewContainer = options.pageContainer;
-    _.bindAll(this, 'cloudActionPage', 'cmsListPage', 'cmsAddressPage', 'backToIntro');
+    _.bindAll(this, 'populateActionPage', 'cloudActionPage', 'cmsListPage', 'cmsAddressPage', 'backToIntro');
   },
 
   render: function(){
     var introView = new App.View.IntroView();
     this.introView = introView.render();
     this.mainViewContainer.html(this.introView);
+  },
+
+  populateActionPage: function(){
+    if(!this.populateView){
+      var populateView = new App.View.PopulateView();
+      this.populateView = populateView.render();
+    }
+    this.showPage(this.populateView);
   },
 
   cloudActionPage: function(){
