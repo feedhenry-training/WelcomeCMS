@@ -169,13 +169,13 @@ module.exports = function populate(cb){
                   cb();
                 });
               },function addImage (){
-                $fh.cms.uploadField( $fh.cms.uploadForField({
+                $fh.cms.uploadField({
                   "filePath":"/img/nodejs.jpeg",
                   "fileName":"test_image.jpg",
                   "section":"simpleFields",
                   "field":"afile",
                   "type": "file"
-                },callback));
+                },callback);
               });
             }
           });
