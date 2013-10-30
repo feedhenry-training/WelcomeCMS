@@ -2,8 +2,8 @@
   "name": "FHWelcomeCMS",
   "version": "0.0.1",
   "dependencies": {
-    "fh-webapp" : "*",
-    "fh-api" : "*",
+    "fh-webapp-test" : "*",
+    "fh-api-test" : "*",
     "express" : "3.3.4",
     "limiter" : "*",
     "request" : "*",
