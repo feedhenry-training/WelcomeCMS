@@ -169,12 +169,13 @@ module.exports = function populate(cb){
                   cb();
                 });
               },function addImage (){
-                 $fh.cms.getField({"section":section1_name,"name":"afile"},function (err, field){
-                   console.log("returned from getField ", err, field);
-                   callback();
-                 });
-                //$fh.cms.uploadForField({"filePath":"./img/nodejs.jpeg","id":""},callback);
-
+                $fh.cms.uploadForField( $fh.cms.uploadForField({
+                  "filePath":"/img/nodejs.jpeg",
+                  "fileName":"test_image.jpg",
+                  "section":"simpleFields",
+                  "field":"afile",
+                  "type": "file"
+                },callback));
               });
             }
           });
