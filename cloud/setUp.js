@@ -52,6 +52,19 @@ module.exports = function populate(cb){
               "fields":[]
             },
             {
+              "name":"afile",
+              "section": section1_name,
+              "type":"file",
+              "modifiedBy":"test@test.com",
+              "value":"",
+              "binaryFileName": "",
+              "binaryContentType": "",
+              "binaryUrl": "",
+              "binaryHash": "",
+              "data":[],
+              "fields":[]
+            },
+            {
               "name":"address",
               "section": section1_name,
               "type":"paragraph",
@@ -151,8 +164,14 @@ module.exports = function populate(cb){
                 var sectionJson = JSON.stringify(sec);
                 var secDiff = JSON.parse(sectionJson);
                 secDiff.fields = fields[sec.name];
-                $fh.cms.setSectionStructureAndData(secDiff,cb);
-              },callback);
+                $fh.cms.setSectionStructureAndData(secDiff,function (err, ok){
+                  console.log("returned from setSection ", ok);
+                  cb();
+                });
+              },function addImage (){
+                //$fh.cms.uploadForField({"filePath":"./img/nodejs.jpeg","id":""},callback);
+                callback();
+              });
             }
           });
         }

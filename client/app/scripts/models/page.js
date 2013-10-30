@@ -25,7 +25,8 @@ App.models.cloudcallPage = new App.Model.PageModel({
   extraRes: '',
   cmsFieldData: "Initial App Data",
   page1Name: "Initial name value when app installed",
-  page1Address: "Initial address value when app installed"
+  page1Address: "Initial address value when app installed",
+  page1Img:"/img/nodejs.png"
 });
 
 App.models.populatePage = new App.Model.PageModel({
