@@ -169,7 +169,7 @@ module.exports = function populate(cb){
                   cb();
                 });
               },function addImage (){
-                $fh.cms.uploadForField( $fh.cms.uploadForField({
+                $fh.cms.uploadField( $fh.cms.uploadForField({
                   "filePath":"/img/nodejs.jpeg",
                   "fileName":"test_image.jpg",
                   "section":"simpleFields",
