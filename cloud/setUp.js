@@ -3,6 +3,7 @@ var async = require('async');
 var section1_name = 'simpleFields';
 var section2_name = 'addresses';
 var section3_name = 'simpleList';
+var fs = require('fs');
 
 module.exports = function populate(cb){
   setTimeout(function (){
@@ -169,8 +170,10 @@ module.exports = function populate(cb){
                   cb();
                 });
               },function addImage (){
+
+
                 $fh.cms.uploadField({
-                  "filePath":"/img/nodejs.jpeg",
+                  "filePath":__dirname + "/img/nodejs.jpeg",
                   "fileName":"test_image.jpg",
                   "section":"simpleFields",
                   "field":"afile",
