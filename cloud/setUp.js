@@ -195,7 +195,7 @@ module.exports = function populate(cb){
                   "type": "file"
                 },function (err, ok){
                   $fh.cms.uploadField({
-                    "filePath":__dirname + "/img/nodejs.jpeg",
+                    "filePath":__dirname + "/img/java.jpeg",
                     "fileName":"test_image.jpg",
                     "section":"images",
                     "field":"logo",
