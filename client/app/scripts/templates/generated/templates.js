@@ -28,7 +28,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (stack1 = helpers.page1Img) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.page1Img; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "\" />></p>\n  </div>\n</div>";
+    + "\" /></p>\n  </div>\n</div>";
   return buffer;
   });
 
