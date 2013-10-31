@@ -65,6 +65,7 @@ App.View.MainView = Backbone.View.extend({
     hash[eventName + ' .cms-address'] = 'cmsAddressPage';
     hash[eventName + ' .btn.refresh'] = 'cmsRefresh';
     hash[eventName + ' .btn.back'] = 'backToIntro';
+    hash[eventName + ' .cms-images'] = 'cmsImagesPage';
     return hash;
   },
 
@@ -105,6 +106,14 @@ App.View.MainView = Backbone.View.extend({
       this.cmsAddressView = cmsAddressView.render();
     }
     this.showPage(this.cmsAddressView);
+  },
+
+  cmsImagesPage : function (){
+    if(!this.cmsImageView){
+      var cmsImageView = new App.View.CMSImageView();
+      this.cmsImageView = cmsImageView.render();
+    }
+    this.showPage(this.cmsImageView);
   },
 
   cmsListPage: function(){

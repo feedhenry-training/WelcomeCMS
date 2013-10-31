@@ -13,7 +13,8 @@ App.models.introPage = new App.Model.PageModel({
     {className: 'populate-action', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Initialise', menuSubTitle: 'Setup Initial Data', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'off'},
     {className: 'cloud-action', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS', menuSubTitle: 'Simple Fields', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'cloud'},
     {className: 'cms-list', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS List Page', menuSubTitle: 'CMS Lists', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'list-alt'},
-    {className: 'cms-address', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS Address', menuSubTitle: 'CMS Addresses', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'user'}
+    {className: 'cms-address', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS Address', menuSubTitle: 'CMS Addresses', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'user'},
+    {className: 'cms-images', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS Images', menuSubTitle: 'Images', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'icon-picture'}
   ]
 });
 
@@ -82,6 +83,15 @@ App.models.cmsListPage = new App.Model.PageModel({
     {paragraph: 'Hello World'}
   ]
 });
+
+App.models.cmsImagesPage = new App.Model.PageModel({
+  "title":"Cms Images Page",
+  "header":"Cms Images",
+  "images":[{
+    "image":"/img/nodejs.png"
+  }]
+});
+
 
 App.Model.Address = Backbone.Model.extend({});
 
