@@ -88,7 +88,7 @@ App.models.cmsImagesPage = new App.Model.PageModel({
   "title":"Cms Images Page",
   "header":"Cms Images",
   "images":[{
-    "image":"/img/nodejs.png"
+    "image":"img/nodejs.png"
   }]
 });
 

@@ -76,7 +76,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n          <p><img src=\""
+  buffer += "\n          <p><img style=\"width:80%\" src=\""
     + escapeExpression(((stack1 = depth0.image),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\" /></p>\n      ";
   return buffer;
