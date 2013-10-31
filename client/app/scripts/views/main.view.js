@@ -33,7 +33,10 @@ function doCmsRefresh() {
 
   function setImagesData(){
     $fh.cms.getField({"path":"images.logo"},function(url){
-
+      console.log("got image field ", url);
+       App.models.cmsImagesPage.set("images",[{
+         "image":url
+       }]);
     },function (err){
        console.log("error getting images logo ", err);
     });
@@ -51,6 +54,7 @@ function doCmsRefresh() {
         App.models.cloudcallPage.set("page1Address", page1Address);
         setListData();
         setAddressData();
+        setImagesData();
       }, function(err) {
         console.log('error retrieving field value, err: ', err);
       });
