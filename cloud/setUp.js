@@ -192,14 +192,16 @@ module.exports = function populate(cb){
                   "fileName":"test_image.jpg",
                   "section":"simpleFields",
                   "field":"logo",
-                  "type": "file"
+                  "type": "file",
+                  "save":true
                 },function (err, ok){
                   $fh.cms.uploadField({
                     "filePath":__dirname + "/img/nodejs.jpeg",
                     "fileName":"npmimg.jpg",
                     "section":"images",
                     "field":"logo",
-                    "type": "file"
+                    "type": "file",
+                    "save":true
                   },callback);
                 });
               });
