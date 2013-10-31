@@ -24,7 +24,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (stack1 = helpers.page1Address) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.page1Address; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</p>\n     <p class=\"appdata\" ><img src=\"";
+    + "</p>\n    <p>Our favourite language is:</p>\n    <p class=\"appdata\" ><img src=\"";
   if (stack1 = helpers.page1Img) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.page1Img; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
