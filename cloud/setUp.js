@@ -3,6 +3,7 @@ var async = require('async');
 var section1_name = 'simpleFields';
 var section2_name = 'addresses';
 var section3_name = 'simpleList';
+var section4_name = 'images';
 var fs = require('fs');
 
 module.exports = function populate(cb){
@@ -31,7 +32,7 @@ module.exports = function populate(cb){
           });
         },
         function addSections (callback){
-          var sections = [section1_name, section2_name, section3_name];
+          var sections = [section1_name, section2_name, section3_name,section4_name];
           async.each(sections,function (sName, cb2){
             $fh.cms.addSection({"name":sName,"parent":"","modifiedBy":"test@test.com","path":sName},cb2);
           },callback);
@@ -53,7 +54,7 @@ module.exports = function populate(cb){
               "fields":[]
             },
             {
-              "name":"afile",
+              "name":"logo",
               "section": section1_name,
               "type":"file",
               "modifiedBy":"test@test.com",
@@ -154,6 +155,20 @@ module.exports = function populate(cb){
               }
           ];
 
+          fields[section4_name] = [{
+            "name":"logo",
+            "section": section4_name,
+            "type":"file",
+            "modifiedBy":"test@test.com",
+            "value":"",
+            "binaryFileName": "",
+            "binaryContentType": "",
+            "binaryUrl": "",
+            "binaryHash": "",
+            "data":[],
+            "fields":[]
+          },]
+
           $fh.cms.getAll({}, function (err, data){
             if(err){
               console.log("error get all ", err);
@@ -176,9 +191,17 @@ module.exports = function populate(cb){
                   "filePath":__dirname + "/img/nodejs.jpeg",
                   "fileName":"test_image.jpg",
                   "section":"simpleFields",
-                  "field":"afile",
+                  "field":"logo",
                   "type": "file"
-                },callback);
+                },function (err, ok){
+                  $fh.cms.uploadField({
+                    "filePath":__dirname + "/img/nodejs.jpeg",
+                    "fileName":"test_image.jpg",
+                    "section":"images",
+                    "field":"logo",
+                    "type": "file"
+                  },callback);
+                });
               });
             }
           });

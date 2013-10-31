@@ -32,7 +32,11 @@ function doCmsRefresh() {
   }
 
   function setImagesData(){
-    $fh.cms.getField({"path":"images.logo"})
+    $fh.cms.getField({"path":"images.logo"},function(url){
+
+    },function (err){
+       console.log("error getting images logo ", err);
+    });
   }
 
 
