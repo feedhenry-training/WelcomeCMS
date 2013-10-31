@@ -130,6 +130,7 @@ module.exports = function(grunt) {
               '<%= yeoman.app %>/scripts/views/viewbase.view.js',
               '<%= yeoman.app %>/scripts/views/main.view.js',
               '<%= yeoman.app %>/scripts/views/cloudcall.view.js',
+              '<%= yeoman.app %>/scripts/views/cmsimage.view.js',
               '<%= yeoman.app %>/scripts/views/stats.view.js',
               '<%= yeoman.app %>/scripts/views/nodepage.view.js',
               '<%= yeoman.app %>/scripts/views/databrowser.view.js',
