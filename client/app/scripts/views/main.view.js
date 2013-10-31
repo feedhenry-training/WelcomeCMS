@@ -32,13 +32,14 @@ function doCmsRefresh() {
   }
 
   function setImagesData(){
+    console.log("set Images data called");
     $fh.cms.getField({"path":"images.logo"},function(url){
-      console.log("got image field ", url);
-       App.models.cmsImagesPage.set("images",[{
-         "image":url
-       }]);
+      console.log("**** got image field ", url);
+      App.models.cmsImagesPage.set("images",[{
+        "image":url
+      }]);
     },function (err){
-       console.log("error getting images logo ", err);
+      console.log(" **** error getting images logo ", err);
     });
   }
 

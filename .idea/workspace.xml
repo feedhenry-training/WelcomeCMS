@@ -2,6 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3560767-9c05-4bc1-8678-eac526f662a3" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/default/404.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/default/css/main.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/default/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/default/fonts/font-awesome/FontAwesome.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/default/fonts/font-awesome/fontawesome-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/default/fonts/font-awesome/fontawesome-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/default/fonts/font-awesome/fontawesome-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/default/fonts/font-awesome/fontawesome-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/default/fonts/glyphicons/glyphicons-halflings-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/default/fonts/glyphicons/glyphicons-halflings-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/default/fonts/glyphicons/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/default/fonts/glyphicons/glyphicons-halflings-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/default/img/nodejs.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/default/img/npm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/default/img/plugins/loggly.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/default/img/plugins/mixpanel.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/default/img/plugins/mysql.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/default/img/plugins/oracle.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/default/img/plugins/paypal.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/default/img/plugins/postgresql.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/default/img/plugins/rabbitmq.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/default/img/plugins/s3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/default/img/plugins/salesforce.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/default/img/plugins/sendgrid.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/default/img/plugins/stripe.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/default/img/plugins/twilio.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/scripts/views/main.view.js" afterPath="$PROJECT_DIR$/client/app/scripts/views/main.view.js" />
     </list>
     <ignored path="WelcomeCMS.iws" />
@@ -25,10 +51,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.view.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.view.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/app/scripts/views/main.view.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="43" selection-start="1237" selection-end="1237" vertical-scroll-proportion="0.42471042" vertical-offset="195" max-vertical-offset="2850">
+            <state line="42" column="4" selection-start="1450" selection-end="1450" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2865">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -59,7 +85,7 @@
       <file leaf-file-name="cmsimage.view.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/app/scripts/views/cmsimage.view.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="21" selection-start="44" selection-end="56" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
+            <state line="12" column="54" selection-start="330" selection-end="330" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -118,10 +144,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="page.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/app/scripts/models/page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="91" column="3" selection-start="4422" selection-end="4455" vertical-scroll-proportion="0.0" vertical-offset="1051" max-vertical-offset="1815">
+            <state line="91" column="15" selection-start="4456" selection-end="4456" vertical-scroll-proportion="1.5104712" vertical-offset="211" max-vertical-offset="1815">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -476,15 +502,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/scripts/views/cmsimage.view.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="21" selection-start="44" selection-end="56" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/app/scripts/views/cmslist.view.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="31" selection-start="141" selection-end="152" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
@@ -512,9 +529,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/scripts/models/page.js">
+    <entry file="file://$PROJECT_DIR$/client/app/scripts/views/cmsimage.view.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="3" selection-start="4422" selection-end="4455" vertical-scroll-proportion="0.0" vertical-offset="1051" max-vertical-offset="1815">
+        <state line="12" column="54" selection-start="330" selection-end="330" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -523,7 +540,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/app/scripts/views/main.view.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="43" selection-start="1237" selection-end="1237" vertical-scroll-proportion="0.42471042" vertical-offset="195" max-vertical-offset="2850">
+        <state line="42" column="4" selection-start="1450" selection-end="1450" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2865">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/scripts/models/page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="15" selection-start="4456" selection-end="4456" vertical-scroll-proportion="1.5104712" vertical-offset="211" max-vertical-offset="1815">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
