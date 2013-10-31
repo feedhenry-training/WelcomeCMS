@@ -31,6 +31,11 @@ function doCmsRefresh() {
     });
   }
 
+  function setImagesData(){
+    $fh.cms.getField({"path":"images.logo"})
+  }
+
+
   $fh.cms.updateAll(function () {
     console.log('Successful mCMS refresh');
     $fh.cms.getField({path:"simpleFields.name"}, function(page1Name) {

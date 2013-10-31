@@ -14,7 +14,7 @@ App.models.introPage = new App.Model.PageModel({
     {className: 'cloud-action', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS', menuSubTitle: 'Simple Fields', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'cloud'},
     {className: 'cms-list', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS List Page', menuSubTitle: 'CMS Lists', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'list-alt'},
     {className: 'cms-address', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS Address', menuSubTitle: 'CMS Addresses', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'user'},
-    {className: 'cms-images', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS Images', menuSubTitle: 'Images', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'icon-picture'}
+    {className: 'cms-images', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS Images', menuSubTitle: 'Images', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'picture'}
   ]
 });
 
@@ -88,7 +88,7 @@ App.models.cmsImagesPage = new App.Model.PageModel({
   "title":"Cms Images Page",
   "header":"Cms Images",
   "images":[{
-    "image":"img/nodejs.png"
+    "image":"img/java.jpeg"
   }]
 });
 
