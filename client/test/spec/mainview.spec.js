@@ -18,6 +18,6 @@ describe('render main page', function(){
   it('should contain 4 page links', function(){
     //verify there is 1 option displayed
     var pageLinks = mainPageDiv.find('.row .container');
-    expect(pageLinks.length).toEqual(5);
+    expect(pageLinks.length).toEqual(6);
   });
 });

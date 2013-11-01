@@ -62,6 +62,46 @@ function doCmsRefresh() {
 
   }
 
+  function setSamplePageData(){
+    //App.models.samplePage
+    $fh.cms.getField({"path":"samplePage.title"},function(data){
+      App.models.samplePage.set("title",data);
+    });
+    $fh.cms.getField({"path":"samplePage.advert1Image"},function(img){
+      App.models.samplePage.set("advert1Image",img);
+    });
+    $fh.cms.getField({"path":"samplePage.advert1Header"},function(data){
+      App.models.samplePage.set("advert1Header",data);
+    });
+    $fh.cms.getField({"path":"samplePage.advert1Details"},function(data){
+      App.models.samplePage.set("advert1Details",data);
+    });
+    $fh.cms.getField({"path":"samplePage.advert1LinkButton"},function(img){
+      App.models.samplePage.set("advert1LinkButton",img);
+    });
+    $fh.cms.getField({"path":"samplePage.advert1LinkURL"},function(data){
+      App.models.samplePage.set("advert1LinkURL",data);
+    });
+    $fh.cms.getField({"path":"samplePage.advert2HeaderRed"},function(data){
+      App.models.samplePage.set("advert2HeaderRed",data);
+    });
+    $fh.cms.getField({"path":"samplePage.advert2HeaderBlack"},function(data){
+      App.models.samplePage.set("advert2HeaderBlack",data);
+    });
+    $fh.cms.getField({"path":"samplePage.advert2LinkText"},function(data){
+      App.models.samplePage.set("advert2LinkText",data);
+    });
+    $fh.cms.getField({"path":"samplePage.advert2LinkURL"},function(data){
+      App.models.samplePage.set("advert2LinkURL",data);
+    });
+    $fh.cms.getField({"path":"samplePage.advert2OfferValid"},function(data){
+      App.models.samplePage.set("advert2OfferValid",data);
+    });
+    $fh.cms.getField({"path":"samplePage.advert2Image"},function(data){
+      App.models.samplePage.set("advert2Image",data);
+    });
+  }
+
 
   $fh.cms.updateAll(function () {
     console.log('Successful mCMS refresh');
@@ -72,6 +112,7 @@ function doCmsRefresh() {
         console.log('Retrieved field value: ', page1Address);
         App.models.cloudcallPage.set("page1Name", page1Name);
         App.models.cloudcallPage.set("page1Address", page1Address);
+        setSamplePageData();
         setListData();
         setAddressData();
         setImagesData();
