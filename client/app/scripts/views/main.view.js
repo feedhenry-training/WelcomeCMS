@@ -31,6 +31,38 @@ function doCmsRefresh() {
     });
   }
 
+  function setImagesData(){
+    console.log("set Images data called");
+    $fh.cms.getField({"path":"images.logo"},function(url){
+      console.log("**** got image field images.logo ", url);
+      App.models.cmsImagesPage.set("images",[{
+        "image":url+"?rand="+Math.random() * 1000
+      }]);
+    },function (err){
+      console.log(" **** error getting images logo ", err);
+    });
+
+    $fh.cms.getField({"path":"simpleFields.logo"},function(url){
+      console.log("**** got image field simpleFields.logo ", url);
+      App.models.cloudcallPage.set({"page1Img":url+"?rand=" + Math.random() * 1000});
+    },function (err){
+      console.log(" **** error getting images logo ", err);
+    });
+    $fh.cms.getList({path: 'images.images'}, function (list) {
+      console.log("GOT LIST IMAGES ********************** ", list);
+      if(list && list.length > 0){
+        var images = [];
+        for(var i=0; i < list.length; i++){
+          var litem = list[i];
+          images.push({"image":litem.binaryUrl});
+        }
+        App.models.cmsImagesPage.set("listimages",images);
+      }
+    });
+
+  }
+
+
   $fh.cms.updateAll(function () {
     console.log('Successful mCMS refresh');
     $fh.cms.getField({path:"simpleFields.name"}, function(page1Name) {
@@ -42,6 +74,7 @@ function doCmsRefresh() {
         App.models.cloudcallPage.set("page1Address", page1Address);
         setListData();
         setAddressData();
+        setImagesData();
       }, function(err) {
         console.log('error retrieving field value, err: ', err);
       });
@@ -66,6 +99,7 @@ App.View.MainView = Backbone.View.extend({
     hash[eventName + ' .sample-page'] = 'samplePage';
     hash[eventName + ' .btn.refresh'] = 'cmsRefresh';
     hash[eventName + ' .btn.back'] = 'backToIntro';
+    hash[eventName + ' .cms-images'] = 'cmsImagesPage';
     return hash;
   },
 
@@ -106,6 +140,14 @@ App.View.MainView = Backbone.View.extend({
       this.cmsAddressView = cmsAddressView.render();
     }
     this.showPage(this.cmsAddressView);
+  },
+
+  cmsImagesPage : function (){
+    if(!this.cmsImageView){
+      var cmsImageView = new App.View.CMSImageView();
+      this.cmsImageView = cmsImageView.render();
+    }
+    this.showPage(this.cmsImageView);
   },
 
   cmsListPage: function(){
