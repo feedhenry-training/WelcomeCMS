@@ -68,7 +68,7 @@ function doCmsRefresh() {
       App.models.samplePage.set("title",data);
     });
     $fh.cms.getField({"path":"samplePage.advert1Image"},function(img){
-      App.models.samplePage.set("advert1Image",img);
+      App.models.samplePage.set("advert1Image",img +"?rand="+Math.random() * 1000);
     });
     $fh.cms.getField({"path":"samplePage.advert1Header"},function(data){
       App.models.samplePage.set("advert1Header",data);
@@ -77,7 +77,7 @@ function doCmsRefresh() {
       App.models.samplePage.set("advert1Details",data);
     });
     $fh.cms.getField({"path":"samplePage.advert1LinkButton"},function(img){
-      App.models.samplePage.set("advert1LinkButton",img);
+      App.models.samplePage.set("advert1LinkButton",img +"?rand="+Math.random() * 1000);
     });
     $fh.cms.getField({"path":"samplePage.advert1LinkURL"},function(data){
       App.models.samplePage.set("advert1LinkURL",data);
@@ -98,7 +98,7 @@ function doCmsRefresh() {
       App.models.samplePage.set("advert2OfferValid",data);
     });
     $fh.cms.getField({"path":"samplePage.advert2Image"},function(data){
-      App.models.samplePage.set("advert2Image",data);
+      App.models.samplePage.set("advert2Image",data +"?rand="+Math.random() * 1000);
     });
   }
 
