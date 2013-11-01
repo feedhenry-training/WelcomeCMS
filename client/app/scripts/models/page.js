@@ -117,3 +117,5 @@ App.models.cmsAddresses = new App.Model.PageModel({
     {name: 'Martin', address: "Tramore"}
   ]
 });
+
+//Error uploading files: function (){if(c){var a=c.length;n(arguments),j?l=c.length:e&&e!==!0&&(k=a,o(e[0],e[1]))}return this}

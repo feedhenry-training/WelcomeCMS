@@ -48,6 +48,18 @@ function doCmsRefresh() {
     },function (err){
       console.log(" **** error getting images logo ", err);
     });
+    $fh.cms.getList({path: 'images.images'}, function (list) {
+      console.log("GOT LIST IMAGES ********************** ", list);
+      if(list && list.length > 0){
+        var images = [];
+        for(var i=0; i < list.length; i++){
+          var litem = list[i];
+          images.push({"image":litem.binaryUrl});
+        }
+        App.models.cmsImagesPage.set("listimages",images);
+      }
+    });
+
   }
 
 
