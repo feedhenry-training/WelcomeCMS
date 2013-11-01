@@ -36,7 +36,7 @@ function doCmsRefresh() {
     $fh.cms.getField({"path":"images.logo"},function(url){
       console.log("**** got image field images.logo ", url);
       App.models.cmsImagesPage.set("images",[{
-        "image":url+"&rand="+Math.random() * 1000
+        "image":url+"?rand="+Math.random() * 1000
       }]);
     },function (err){
       console.log(" **** error getting images logo ", err);
@@ -44,7 +44,7 @@ function doCmsRefresh() {
 
     $fh.cms.getField({"path":"simpleFields.logo"},function(url){
       console.log("**** got image field simpleFields.logo ", url);
-      App.models.cloudcallPage.set({"page1Img":url+"&rand=" + Math.random() * 1000});
+      App.models.cloudcallPage.set({"page1Img":url+"?rand=" + Math.random() * 1000});
     },function (err){
       console.log(" **** error getting images logo ", err);
     });
