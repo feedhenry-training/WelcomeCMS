@@ -133,7 +133,7 @@ App.Collection.SamplePage = Backbone.Collection.extend({
 App.models.samplePage = new App.Model.PageModel({
   title: 'Sample Page',
   advert1Image: 'img/samplepage/advert1.png',
-  advert1Header: 'the year\'s biggest sale is 11/28-11/30.',
+  advert1Header: 'the years biggest sale is 11/28-11/30.',
   advert1Details: 'get sales scoops & access to the weekly ad.',
   advert1LinkButton: 'img/samplepage/advert1-signup.png',
   advert1LinkURL: 'http://www.example.com',

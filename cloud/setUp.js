@@ -203,7 +203,7 @@ module.exports = function populate(cb){
               "section":section5_name,
               "type":"string",
               "modifiedBy":"test@test.com",
-              "value":"the year\'s biggest sale is 11/28-11/30.",
+              "value":"the years biggest sale is 11/28-11/30.",
               "binaryFileName": "",
               "binaryContentType": "",
               "binaryUrl": "",
