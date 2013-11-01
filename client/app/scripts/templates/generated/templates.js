@@ -98,8 +98,8 @@ function program3(depth0,data) {
     + "</h1>\n\n        <h2>Images</h2>\n\n      ";
   stack1 = helpers.each.call(depth0, depth0.images, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n\n      <h2>List Images:</h2>\n      ";
-  stack1 = helpers.each.call(depth0, depth0.imaglist, {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
+  buffer += "\n\n      <h2>List</h2>\n      ";
+  stack1 = helpers.each.call(depth0, depth0.listimages, {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n\n    </div>\n</div>";
   return buffer;
