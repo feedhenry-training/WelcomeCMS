@@ -3,6 +3,10 @@ var async = require('async');
 var section1_name = 'simpleFields';
 var section2_name = 'addresses';
 var section3_name = 'simpleList';
+var section4_name = 'images';
+var section5_name = 'samplePage';
+
+var fs = require('fs');
 
 module.exports = function populate(cb){
   setTimeout(function (){
@@ -30,7 +34,7 @@ module.exports = function populate(cb){
           });
         },
         function addSections (callback){
-          var sections = [section1_name, section2_name, section3_name];
+          var sections = [section1_name, section2_name, section3_name,section4_name,section5_name];
           async.each(sections,function (sName, cb2){
             $fh.cms.addSection({"name":sName,"parent":"","modifiedBy":"test@test.com","path":sName},cb2);
           },callback);
@@ -44,6 +48,19 @@ module.exports = function populate(cb){
               "type":"string",
               "modifiedBy":"test@test.com",
               "value":"FeedHenry",
+              "binaryFileName": "",
+              "binaryContentType": "",
+              "binaryUrl": "",
+              "binaryHash": "",
+              "data":[],
+              "fields":[]
+            },
+            {
+              "name":"logo",
+              "section": section1_name,
+              "type":"file",
+              "modifiedBy":"test@test.com",
+              "value":"",
               "binaryFileName": "",
               "binaryContentType": "",
               "binaryUrl": "",
@@ -140,6 +157,180 @@ module.exports = function populate(cb){
               }
           ];
 
+          fields[section4_name] = [{
+            "name":"logo",
+            "section": section4_name,
+            "type":"file",
+            "modifiedBy":"test@test.com",
+            "value":"",
+            "binaryFileName": "",
+            "binaryContentType": "",
+            "binaryUrl": "",
+            "binaryHash": "",
+            "data":[],
+            "fields":[]
+          }];
+
+          fields[section5_name] = [
+            {
+              "name":"title",
+              "section":section5_name,
+              "type":"string",
+              "modifiedBy":"test@test.com",
+              "value":"Sample Page",
+              "binaryFileName": "",
+              "binaryContentType": "",
+              "binaryUrl": "",
+              "binaryHash": "",
+              "data":[],
+              "fields":[]
+            },
+            {
+              "name":"advert1Image",
+              "section": section5_name,
+              "type":"file",
+              "modifiedBy":"test@test.com",
+              "value":"",
+              "binaryFileName": "",
+              "binaryContentType": "",
+              "binaryUrl": "",
+              "binaryHash": "",
+              "data":[],
+              "fields":[]
+            },
+            {
+              "name":"advert1Header",
+              "section":section5_name,
+              "type":"string",
+              "modifiedBy":"test@test.com",
+              "value":"the year\'s biggest sale is 11/28-11/30.",
+              "binaryFileName": "",
+              "binaryContentType": "",
+              "binaryUrl": "",
+              "binaryHash": "",
+              "data":[],
+              "fields":[]
+            },
+            {
+              "name":"advert1Details",
+              "section":section5_name,
+              "type":"string",
+              "modifiedBy":"test@test.com",
+              "value":"get sales scoops & access to the weekly ad.",
+              "binaryFileName": "",
+              "binaryContentType": "",
+              "binaryUrl": "",
+              "binaryHash": "",
+              "data":[],
+              "fields":[]
+            },
+            {
+              "name":"advert1LinkButton",
+              "section": section5_name,
+              "type":"file",
+              "modifiedBy":"test@test.com",
+              "value":"",
+              "binaryFileName": "",
+              "binaryContentType": "",
+              "binaryUrl": "",
+              "binaryHash": "",
+              "data":[],
+              "fields":[]
+            },
+            {
+              "name":"advert1LinkURL",
+              "section":section5_name,
+              "type":"string",
+              "modifiedBy":"test@test.com",
+              "value":"http://www.example.com",
+              "binaryFileName": "",
+              "binaryContentType": "",
+              "binaryUrl": "",
+              "binaryHash": "",
+              "data":[],
+              "fields":[]
+            },
+            {
+              "name":"advert2HeaderRed",
+              "section":section5_name,
+              "type":"string",
+              "modifiedBy":"test@test.com",
+              "value":"save up to 50%",
+              "binaryFileName": "",
+              "binaryContentType": "",
+              "binaryUrl": "",
+              "binaryHash": "",
+              "data":[],
+              "fields":[]
+            },
+            {
+              "name":"advert2HeaderBlack",
+              "section":section5_name,
+              "type":"string",
+              "modifiedBy":"test@test.com",
+              "value":"on select Halloween costumes.",
+              "binaryFileName": "",
+              "binaryContentType": "",
+              "binaryUrl": "",
+              "binaryHash": "",
+              "data":[],
+              "fields":[]
+            },
+            {
+              "name":"advert2LinkText",
+              "section":section5_name,
+              "type":"string",
+              "modifiedBy":"test@test.com",
+              "value":"shop Halloween",
+              "binaryFileName": "",
+              "binaryContentType": "",
+              "binaryUrl": "",
+              "binaryHash": "",
+              "data":[],
+              "fields":[]
+            },
+            {
+              "name":"advert2LinkURL",
+              "section":section5_name,
+              "type":"string",
+              "modifiedBy":"test@test.com",
+              "value":"http://www.example.com",
+              "binaryFileName": "",
+              "binaryContentType": "",
+              "binaryUrl": "",
+              "binaryHash": "",
+              "data":[],
+              "fields":[]
+            },
+            {
+              "name":"advert2OfferValid",
+              "section":section5_name,
+              "type":"string",
+              "modifiedBy":"test@test.com",
+              "value":"offer valid 10/27-11/02/13.",
+              "binaryFileName": "",
+              "binaryContentType": "",
+              "binaryUrl": "",
+              "binaryHash": "",
+              "data":[],
+              "fields":[]
+            },
+            {
+              "name":"advert2Image",
+              "section": section5_name,
+              "type":"file",
+              "modifiedBy":"test@test.com",
+              "value":"",
+              "binaryFileName": "",
+              "binaryContentType": "",
+              "binaryUrl": "",
+              "binaryHash": "",
+              "data":[],
+              "fields":[]
+            }
+
+          ];
+
           $fh.cms.getAll({}, function (err, data){
             if(err){
               console.log("error get all ", err);
@@ -151,8 +342,66 @@ module.exports = function populate(cb){
                 var sectionJson = JSON.stringify(sec);
                 var secDiff = JSON.parse(sectionJson);
                 secDiff.fields = fields[sec.name];
-                $fh.cms.setSectionStructureAndData(secDiff,cb);
-              },callback);
+                $fh.cms.setSectionStructureAndData(secDiff,function (err, ok){
+                  console.log("returned from setSection ", ok);
+                  cb();
+                });
+              },function addImage (){
+
+                async.series([function (callback){
+                  $fh.cms.uploadField({
+                    "filePath":__dirname + "/img/advert1.png",
+                    "fileName":"test_image1.jpg",
+                    "section":section5_name,
+                    "field":"advert1Image",
+                    "type": "file",
+                    "save":true
+                  },callback);
+                },
+                function (callback){
+                  $fh.cms.uploadField({
+                    "filePath":__dirname + "/img/advert1-signup.png",
+                    "fileName":"test_image2.jpg",
+                    "section":section5_name,
+                    "field":"advert1LinkButton",
+                    "type": "file",
+                    "save":true
+                  },callback);
+                },
+                function (callback){
+                  $fh.cms.uploadField({
+                    "filePath":__dirname + "/img/advert2.png",
+                    "fileName":"test_image3.jpg",
+                    "section":section5_name,
+                    "field":"advert2Image",
+                    "type": "file",
+                    "save":true
+                  },callback);
+                }
+
+                ],function (err){
+                  $fh.cms.uploadField({
+                    "filePath":__dirname + "/img/nodejs.jpeg",
+                    "fileName":"test_image.jpg",
+                    "section":"simpleFields",
+                    "field":"logo",
+                    "type": "file",
+                    "save":true
+                  },function (err, ok){
+                    $fh.cms.uploadField({
+                      "filePath":__dirname + "/img/nodejs.jpeg",
+                      "fileName":"npmimg.jpg",
+                      "section":"images",
+                      "field":"logo",
+                      "type": "file",
+                      "save":true
+                    },callback);
+                  });
+                });
+
+
+
+              });
             }
           });
         }

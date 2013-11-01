@@ -14,7 +14,8 @@ App.models.introPage = new App.Model.PageModel({
     {className: 'cloud-action', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS', menuSubTitle: 'Simple Fields', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'cloud'},
     {className: 'cms-list', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS List Page', menuSubTitle: 'CMS Lists', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'list-alt'},
     {className: 'cms-address', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS Address', menuSubTitle: 'CMS Addresses', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'user'},
-    {className: 'sample-page', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Sample Page', menuSubTitle: 'Example App Page using mCMS', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'search'}
+    {className: 'sample-page', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Sample Page', menuSubTitle: 'Example App Page using mCMS', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'search'},
+    {className: 'cms-images', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS Images', menuSubTitle: 'Images', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'picture'}
   ]
 });
 
@@ -26,7 +27,8 @@ App.models.cloudcallPage = new App.Model.PageModel({
   extraRes: '',
   cmsFieldData: "Initial App Data",
   page1Name: "Initial name value when app installed",
-  page1Address: "Initial address value when app installed"
+  page1Address: "Initial address value when app installed",
+  page1Img:"img/java.jpeg"
 });
 
 App.models.populatePage = new App.Model.PageModel({
@@ -84,6 +86,19 @@ App.models.cmsListPage = new App.Model.PageModel({
 });
 
 
+App.models.cmsImagesPage = new App.Model.PageModel({
+  "title":"Cms Images Page",
+  "header":"Cms Images",
+  "images":[{
+    "image":"img/java.jpeg"
+  }],
+  "listimages":[{
+    "image":"img/java.jpeg"
+  }]
+});
+
+
+
 App.Model.Address = Backbone.Model.extend({});
 
 App.Collection.Addresses = Backbone.Collection.extend({
@@ -105,6 +120,7 @@ App.models.cmsAddresses = new App.Model.PageModel({
     {name: 'Martin', address: "Tramore"}
   ]
 });
+
 
 
 /* Sample Page Begin */
@@ -129,3 +145,4 @@ App.models.samplePage = new App.Model.PageModel({
   advert2Image: 'img/samplepage/advert2.png'
 });
 /* Sample Page End */
+
