@@ -1,0 +1,31 @@
+ {{! handlebars template, will be compiled by the grunt task. The compiled version will be used in the app to improve perfermance}}
+ <div class="content_view">
+ <div class="container">
+    <div class="row advert1">
+      <div class="col-xs-6 advert1Image">
+        <img src="{{advert1Image}}" />
+      </div>
+      <div class="col-xs-6 advert1Text">
+        <h1 class="advert1Heading">{{advert1Header}}</h1>
+        <p class="advert1Details">{{advert1Details}}</p>
+        <div class="advert1LinkContainer">
+          <a class="advert1Link" href="{{advert1LinkURL}}"><img src="{{advert1LinkButton}}"/></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row advert2">
+      <div class="col-xs-8 advert2Text">
+        <h1 class="advert2HeadingRed">{{advert2HeaderRed}}</h1>
+        <h1 class="advert2HeadingBlack">{{advert2HeaderBlack}}</h1>
+        <div class="advert2LinkContainer">
+          <a class="advert2Link" href="{{advert2LinkURL}}">{{advert2LinkText}}</a>
+        </div>
+        <p class="advert2OfferValid">{{advert2OfferValid}}</p>
+      </div>
+      <div class="col-xs-4 advert2Image">
+        <img src="{{advert2Image}}" />
+      <div>
+    </div>
+  </div>
+</div>

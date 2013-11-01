@@ -185,3 +185,73 @@ h6 {
        -o-animation: slideToRight 10ms forwards ease-in-out;
           animation: slideToRight 10ms forwards ease-in-out;
 }
+
+.advert1,
+.advert2 {
+  margin-right: -30px;
+  margin-left: -30px;
+  border-bottom: 1px solid #ccc;
+}
+
+.advert1Heading {
+  font-family: Helvetica;
+  font-size: 25px;
+  color: #000 !important;
+  text-align: left;
+}
+
+.advert1Details {
+  margin-right: 10px;
+  font-family: Helvetica;
+  font-size: 18px;
+  line-height: 20px;
+  color: #929292 !important;
+  text-align: left;
+}
+
+.advert1LinkContainer a {
+  float: left;
+}
+
+.advert2HeadingRed {
+  font-family: Helvetica;
+  font-size: 33px;
+  font-weight: bold;
+  color: #e02d01 !important;
+  text-align: left;
+}
+
+.advert2HeadingBlack {
+  margin-top: -10px;
+  font-family: Helvetica;
+  font-size: 33px;
+  font-weight: bold;
+  color: #000 !important;
+  text-align: left;
+}
+
+.advert2LinkContainer {
+  padding-top: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #0065ff !important;
+  text-align: left;
+}
+
+.advert2LinkContainer a {
+  color: #0065ff !important;
+}
+
+.advert2OfferValid {
+  padding-top: 30px;
+  margin-bottom: -20px;
+  font-size: 10px;
+  font-weight: bold;
+  color: #929292 !important;
+  text-align: left;
+}
+
+.advert2Image img {
+  padding-top: 35px;
+  margin-left: -30px;
+}

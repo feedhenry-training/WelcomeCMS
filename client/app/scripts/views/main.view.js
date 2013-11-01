@@ -63,6 +63,7 @@ App.View.MainView = Backbone.View.extend({
     hash[eventName + ' .cloud-action'] = 'cloudActionPage';
     hash[eventName + ' .cms-list'] = 'cmsListPage';
     hash[eventName + ' .cms-address'] = 'cmsAddressPage';
+    hash[eventName + ' .sample-page'] = 'samplePage';
     hash[eventName + ' .btn.refresh'] = 'cmsRefresh';
     hash[eventName + ' .btn.back'] = 'backToIntro';
     return hash;
@@ -113,6 +114,15 @@ App.View.MainView = Backbone.View.extend({
       this.cmsListView = cmsListView.render();
     }
     this.showPage(this.cmsListView);
+  },
+
+  samplePage: function() {
+    console.log('Loading Sample Page');
+    if(!this.samplePageView) {
+      var samplePageView = new App.View.SamplePageView();
+      this.samplePageView = samplePageView.render();
+    }
+    this.showPage(this.samplePageView);
   },
 
   cmsRefresh: function(){
