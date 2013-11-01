@@ -252,7 +252,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (stack1 = helpers.advert1LinkButton) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.advert1LinkButton; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "\"/></a>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"row advert2\">\n      <div class=\"col-xs-8 advert2Text\">\n        <h1 class=\"advert2HeadingRed\">";
+    + "\"/></a>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"row advert2\">\n      <div class=\"col-xs-9 advert2Text\">\n        <h1 class=\"advert2HeadingRed\">";
   if (stack1 = helpers.advert2HeaderRed) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.advert2HeaderRed; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -272,7 +272,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (stack1 = helpers.advert2OfferValid) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.advert2OfferValid; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</p>\n      </div>\n      <div class=\"col-xs-4 advert2Image\">\n        <img src=\"";
+    + "</p>\n      </div>\n      <div class=\"col-xs-3 advert2Image\">\n        <img src=\"";
   if (stack1 = helpers.advert2Image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.advert2Image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
