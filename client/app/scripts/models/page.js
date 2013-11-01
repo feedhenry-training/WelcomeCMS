@@ -15,7 +15,8 @@ App.models.introPage = new App.Model.PageModel({
     {className: 'cms-list', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS List Page', menuSubTitle: 'CMS Lists', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'list-alt'},
     {className: 'cms-address', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS Address', menuSubTitle: 'CMS Addresses', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'user'},
     {className: 'sample-page', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Sample Page', menuSubTitle: 'Example App Page using mCMS', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'search'},
-    {className: 'cms-images', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS Images', menuSubTitle: 'Images', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'picture'}
+    {className: 'cms-images', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS Images', menuSubTitle: 'Images', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'picture'},
+    {className: 'cms-specials', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Specials', menuSubTitle: 'Special Offers', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'user'}
   ]
 });
 
@@ -109,6 +110,16 @@ App.collections.addresses = new App.Collection.Addresses([
     {name: 'FH', address: "Cleaboy,\nWaterford"},
     {name: 'Martin', address: "Tramore,\nCo. Waterford"}
   ]);
+
+App.Model.Special = Backbone.Model.extend({});
+
+App.Collection.Specials = Backbone.Collection.extend({
+  model: App.Model.Special
+});
+
+App.collections.specials = new App.Collection.Specials([
+  { title : 'Empty Item', price : '$20', description : 'desc', image : ''}
+]);
 
 App.models.cmsAddresses = new App.Model.PageModel({
   title: 'CMS Addresses',

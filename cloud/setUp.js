@@ -5,6 +5,7 @@ var section2_name = 'addresses';
 var section3_name = 'simpleList';
 var section4_name = 'images';
 var section5_name = 'samplePage';
+var section6_name = 'specialOffers';
 
 var fs = require('fs');
 
@@ -329,6 +330,44 @@ module.exports = function populate(cb){
               "fields":[]
             }
 
+          ];
+          fields[section6_name] = [
+            {
+              "name":"currentspecials",
+              "section": section2_name,
+              "type":"list",
+              "modifiedBy":"test@test.com",
+              "value":"",
+              "binaryFileName": "",
+              "binaryContentType": "",
+              "binaryUrl": "",
+              "binaryHash": "",
+              "data":[
+                {
+                  description: "High grade quality leather",
+                  hash: "temp-1383334129981.428",
+                  price: "$299",
+                  title: "Leather Sofa"
+                }
+              ],
+              "fields":[{
+                name: "title",
+                type: "string"
+              },{
+                name: "price",
+                type: "string"
+              },
+              {
+                name: "title",
+                type: "string"
+              },{
+                "name":"description",
+                "type":"paragraph"
+              },{
+                "name":"image",
+                "type":"file"
+              }]
+            }
           ];
 
           $fh.cms.getAll({}, function (err, data){

@@ -20,6 +20,12 @@ function doCmsRefresh() {
     }, function (err) {
       console.log('error retrieving list data, err: ', err);
     });
+
+    $fh.cms.getList({path: 'specialOffers.currentspecials'}, function (list) {
+      App.collections.specials.reset(list);
+    }, function (err) {
+      console.log('error retrieving list data, err: ', err);
+    });
   }
 
   function setAddressData() {
