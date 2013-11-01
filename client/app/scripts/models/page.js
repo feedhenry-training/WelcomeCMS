@@ -6,7 +6,7 @@ App.Model.PageModel = Backbone.Model.extend({
 
 App.models.introPage = new App.Model.PageModel({
   title: 'Welcome',
-  header: 'Welcome To FeedHenry',
+  header: 'FeedHenry Mobile CMS',
   text: 'Learn about and interact with mCMS',
   nextButtonText: 'Let\'s Start',
   menuItems: [
@@ -14,7 +14,7 @@ App.models.introPage = new App.Model.PageModel({
     {className: 'cloud-action', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS', menuSubTitle: 'Simple Fields', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'cloud'},
     {className: 'cms-list', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS List Page', menuSubTitle: 'CMS Lists', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'list-alt'},
     {className: 'cms-address', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'mCMS Address', menuSubTitle: 'CMS Addresses', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'user'},
-    {className: 'sample-page', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Sample Page', menuSubTitle: 'Sample Page', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'user'}
+    {className: 'sample-page', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Sample Page', menuSubTitle: 'Example App Page using mCMS', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'search'}
   ]
 });
 

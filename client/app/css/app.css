@@ -96,13 +96,15 @@ h6 {
   color: #ffffff;
 }
 
-.navbar-text2 {
+.navbar .btn.back {
+  width: 50px;
+  height: 50px;
   padding-top: 10px;
   color: #ffffff;
 }
 
-.navbar .btn.back {
-  width: 75px;
+.navbar .btn.refresh {
+  width: 50px;
   height: 50px;
   padding-top: 10px;
   color: #ffffff;
@@ -113,6 +115,21 @@ h6 {
   width: 100px;
   margin-right: auto;
   margin-left: auto;
+}
+
+.nav.nav-center {
+  right: 0;
+  left: 0;
+  display: inline-block;
+  float: none;
+  margin: 0;
+  font-size: 20px;
+  line-height: 50px;
+  color: #ffffff;
+}
+
+.navbar-inner {
+  text-align: center;
 }
 
 .content_view {

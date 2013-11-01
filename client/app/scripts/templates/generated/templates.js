@@ -149,11 +149,11 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 
 
   buffer += " "
-    + "\n<nav class=\"navbar navbar-default\" role=\"navigation\">\n<div class=\"nav\">\n  <a class=\"btn back pull-left\"><i class=\"icon-chevron-left icon-2x\"></i></a>\n  <div class=\"navbar-text2 pull-left\">";
+    + "\n<nav class=\"navbar navbar-default\" role=\"navigation\">\n<div class=\"nav\">\n  <div class=\"navbar-inner\">\n    <ul class=\"nav pull-left\">\n      <li>\n        <a class=\"btn back\"><i class=\"icon-chevron-left icon-2x\"></i></a>\n      </li>\n    </ul>\n    <ul class=\"nav nav-center\">\n      <li>\n        ";
   if (stack1 = helpers.title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.title; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</div>\n  <a class=\"btn refresh pull-right\"><i class=\"icon-refresh icon-2x\"></i></a>\n</div>\n</nav>";
+    + "\n      </li>\n    </ul>\n    <ul class=\"nav pull-right\">\n      <li>\n        <a class=\"btn refresh\"><i class=\"icon-refresh icon-2x\"></i></a>\n      </li>\n    </ul>\n  </div>\n</div>\n</nav>";
   return buffer;
   });
 

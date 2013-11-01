@@ -12,12 +12,12 @@ describe('render main page', function(){
   //verify header
   it('should contains a banner', function(){
     var header = mainPageDiv.find('.banner h1');
-    expect(header.text()).toMatch(/welcome to feedhenry/i);
+    expect(header.text()).toMatch(/feedhenry mobile cms/i);
   });
   
-  it('should contain 4 page links', function(){
+  it('should contain 5 page links', function(){
     //verify there is 1 option displayed
     var pageLinks = mainPageDiv.find('.row .container');
-    expect(pageLinks.length).toEqual(4);
+    expect(pageLinks.length).toEqual(5);
   });
 });

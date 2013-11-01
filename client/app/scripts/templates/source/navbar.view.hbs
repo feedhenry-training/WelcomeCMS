@@ -1,8 +1,22 @@
  {{! handlebars template, will be compiled by the grunt task. The compiled version will be used in the app to improve perfermance}}
 <nav class="navbar navbar-default" role="navigation">
 <div class="nav">
-  <a class="btn back pull-left"><i class="icon-chevron-left icon-2x"></i></a>
-  <div class="navbar-text2 pull-left">{{title}}</div>
-  <a class="btn refresh pull-right"><i class="icon-refresh icon-2x"></i></a>
+  <div class="navbar-inner">
+    <ul class="nav pull-left">
+      <li>
+        <a class="btn back"><i class="icon-chevron-left icon-2x"></i></a>
+      </li>
+    </ul>
+    <ul class="nav nav-center">
+      <li>
+        {{title}}
+      </li>
+    </ul>
+    <ul class="nav pull-right">
+      <li>
+        <a class="btn refresh"><i class="icon-refresh icon-2x"></i></a>
+      </li>
+    </ul>
+  </div>
 </div>
 </nav>
