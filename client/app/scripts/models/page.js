@@ -89,6 +89,9 @@ App.models.cmsImagesPage = new App.Model.PageModel({
   "header":"Cms Images",
   "images":[{
     "image":"img/java.jpeg"
+  }],
+  "listimages":[{
+    "image":"img/java.jpeg"
   }]
 });
 
