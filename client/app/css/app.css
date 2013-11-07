@@ -96,13 +96,15 @@ h6 {
   color: #ffffff;
 }
 
-.navbar-text2 {
+.navbar .btn.back {
+  width: 50px;
+  height: 50px;
   padding-top: 10px;
   color: #ffffff;
 }
 
-.navbar .btn.back {
-  width: 75px;
+.navbar .btn.refresh {
+  width: 50px;
   height: 50px;
   padding-top: 10px;
   color: #ffffff;
@@ -113,6 +115,21 @@ h6 {
   width: 100px;
   margin-right: auto;
   margin-left: auto;
+}
+
+.nav.nav-center {
+  right: 0;
+  left: 0;
+  display: inline-block;
+  float: none;
+  margin: 0;
+  font-size: 20px;
+  line-height: 50px;
+  color: #ffffff;
+}
+
+.navbar-inner {
+  text-align: center;
 }
 
 .content_view {
@@ -184,4 +201,79 @@ h6 {
   -webkit-animation: slideToRight 10ms forwards ease-in-out;
        -o-animation: slideToRight 10ms forwards ease-in-out;
           animation: slideToRight 10ms forwards ease-in-out;
+}
+
+.advert1,
+.advert2 {
+  margin-right: -30px;
+  margin-left: -30px;
+  border-bottom: 1px solid #ccc;
+}
+
+.advert1Heading {
+  font-family: Helvetica;
+  font-size: 22px;
+  color: #000 !important;
+  text-align: left;
+}
+
+.advert1Details {
+  margin-right: 10px;
+  font-family: Helvetica;
+  font-size: 17px;
+  line-height: 20px;
+  color: #929292 !important;
+  text-align: left;
+}
+
+.advert1Image img {
+  max-width: 165px;
+}
+
+.advert1LinkContainer a {
+  float: left;
+}
+
+.advert2HeadingRed {
+  font-family: Helvetica;
+  font-size: 31px;
+  font-weight: bold;
+  color: #e02d01 !important;
+  text-align: left;
+}
+
+.advert2HeadingBlack {
+  margin-top: -10px;
+  font-family: Helvetica;
+  font-size: 30px;
+  font-weight: bold;
+  color: #000 !important;
+  text-align: left;
+}
+
+.advert2LinkContainer {
+  padding-top: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #0065ff !important;
+  text-align: left;
+}
+
+.advert2LinkContainer a {
+  color: #0065ff !important;
+}
+
+.advert2OfferValid {
+  padding-top: 30px;
+  margin-bottom: -20px;
+  font-size: 10px;
+  font-weight: bold;
+  color: #929292 !important;
+  text-align: left;
+}
+
+.advert2Image img {
+  max-width: 135px;
+  padding-top: 35px;
+  margin-left: -70px;
 }

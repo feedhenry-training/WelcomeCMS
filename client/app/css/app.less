@@ -103,14 +103,16 @@ a.start-menu-item-icon {
   width: 100%;
 }
 
-.navbar-text2 {
+.navbar .btn.back {
   color: @base-font-color;
+  width: 50px;
+  height: 50px;
   padding-top: 10px;
 }
 
-.navbar .btn.back {
+.navbar .btn.refresh {
   color: @base-font-color;
-  width: 75px;
+  width: 50px;
   height: 50px;
   padding-top: 10px;
 }
@@ -121,6 +123,22 @@ a.start-menu-item-icon {
   margin-left: auto;
   margin-right: auto;
 }
+
+.nav.nav-center {
+  display: inline-block;
+  left: 0;
+  right: 0;
+  margin:0;
+  float:none;
+  color: @base-font-color;
+  line-height: 50px;
+  font-size: 20px;
+}
+
+.navbar-inner{
+  text-align:center;
+}
+
 
 .content_view {
   background-color: @base-font-color;
@@ -190,4 +208,79 @@ a.start-menu-item-icon {
   -webkit-animation: slideToRight 10ms forwards ease-in-out;
   -o-animation: slideToRight 10ms forwards ease-in-out;
   animation: slideToRight 10ms forwards ease-in-out;
+}
+
+.advert1, .advert2 {
+  margin-left: -30px;
+  margin-right: -30px;
+  border-bottom: 1px solid #ccc;
+}
+
+.advert1Heading {
+  font-family: Helvetica;
+  font-size: 22px;
+  color: #000 !important;
+  text-align: left;
+}
+
+.advert1Details {
+  font-family: Helvetica;
+  font-size: 17px;
+  color: #929292 !important;
+  text-align: left;
+  line-height: 20px;
+  margin-right: 10px;
+}
+
+.advert1Image img {
+  max-width: 165px;
+}
+
+.advert1LinkContainer a {
+  float: left;
+}
+
+.advert2HeadingRed {
+  font-family: Helvetica;
+  font-size: 31px;
+  color: #e02d01 !important;
+  text-align: left;
+  font-weight: bold;
+}
+
+.advert2HeadingBlack {
+  font-family: Helvetica;
+  font-size: 30px;
+  color: #000 !important;
+  text-align: left;
+  margin-top: -10px;
+  font-weight: bold;
+}
+
+.advert2LinkContainer {
+  text-align: left;
+  padding-top: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #0065ff !important;
+}
+
+.advert2LinkContainer a {
+  color: #0065ff !important;
+}
+
+
+.advert2OfferValid {
+  text-align: left;
+  padding-top: 30px;
+  font-size: 10px;
+  color: #929292 !important;
+  font-weight: bold;
+  margin-bottom: -20px;
+}
+
+.advert2Image img {
+  padding-top: 35px;
+  margin-left: -70px;
+  max-width: 135px;
 }
