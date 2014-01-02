@@ -21,6 +21,18 @@ connectDB(dbUrl, function(){
 
 });
 
+exports.testDownload = function(params, cb) {
+
+
+  $fh.cms.downloadField(params, function(err, res) {
+    console.log('HERE1');
+    console.log(arguments);
+    console.log('HERE2');
+    cb(err, res);
+  });
+
+}
+
 
 exports.populate = function (params, callback){
   setUp(callback);
